@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u529e" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>This bidirectional charging station establishes a high-level communication session with the Electric Vehicle (EV) Battery Management System (BMS) using standards-compliant digital communication (PLC). Once the charging connector is properly connected to the vehicle inlet, the station engages in real-time data exchange and coordinated control with the vehicle’s battery system, ensuring the safety and reliability of all Vehicle-to-Everything (V2X) energy interactions.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>The BMS communication interface is critical to enabling the following multi-layered safety protections:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>Real Time Status Monitoring</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>DC wallbox Side: Implements continuous monitoring via a thermistor to track the temperature of the charging connector.</Content>
+				<Br />
+				<Content>EV Side: Acquires key parameters from the vehicle’s battery pack—including voltage, current, temperature, and State of Charge (SOC)—through ongoing communication sessions.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>Dual-Tier Temperature Protection</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>DC wallbox Protection: The charging station constantly monitors the temperature of the charging connector and cable. If an overheating risk is detected, it immediately initiates power derating or ceases charging.</Content>
+				<Br />
+				<Content>EV BMS Protection: The vehicle’s BMS continuously monitors individual cell temperatures. Upon detecting any abnormality, it immediately commands the charging station to adjust power or halt charging/discharging, thereby fundamentally preventing the risk of battery thermal runaway.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>Coordinated Operation and Fault Protection</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<KinsokuSet type="enumeration">SoftKinsoku</KinsokuSet>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>Through highly reliable digital communication, the charging station and the vehicle BMS jointly manage the charging and discharging process. The detection of any fault condition (such as over voltage, over current, over temperature, or insulation failure) by either party will trigger an immediate protection sequence to ensure the safety of both the vehicle and the charging infrastructure.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
