@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u118cd" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/正文">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8" AppliedLanguage="$ID/Chinese: Simplified">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>Company Name: Wanbang Digital Energy Co., Ltd.</Content>
+				<Br />
+				<Content>Company Address: No.39 Longhui Road, Wujin High-tech Zone, Changzhou, Jiangsu, China</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="8" AppliedLanguage="$ID/Chinese: Simplified">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>Customer service: 400-800-2610 </Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8" AppliedLanguage="$ID/Chinese: Simplified">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>Company Website: https://www.starcharge.com</Content>
+				<Br />
+				<Br />
+				<Content>Wanbang Digital Energy Co., Ltd. All Rights Reserved. No part of this document may be disclosed, reproduced, distributed, modified, transmitted, or used in any form, without prior written authorization. The Company reserves all rights, including those arising from patents, utility models, or design registrations.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
