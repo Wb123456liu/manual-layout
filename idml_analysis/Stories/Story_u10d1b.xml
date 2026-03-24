@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u10d1b" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" Justification="LeftAlign">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="6">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>EV Cigarette lighter interface</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
