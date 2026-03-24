@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u119cb" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1" NumberingContinue="false">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<NumberingFormat type="string">a, b, c, d...</NumberingFormat>
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>(1) W</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>e can upgrade the DC wallbox firmware if necessary. For details on updating the firmware </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<NumberingFormat type="string">a, b, c, d...</NumberingFormat>
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>      version, refer to </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>Chapter 8.2. </Content>
+				<Br />
+				<Content>(2) Before connecting to the DC wallbox, disconnect your mobile phone’s Bluetooth from other </Content>
+				<Br />
+				<Content>     devices.</Content>
+				<Br />
+				<Content>(3) Try to connect to the Bluetooth via Android or IOS connection.</Content>
+				<Br />
+				<Content>(4) Install the Star Service app onto your phone and proceeded to connect to the DC wallbox.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="0" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Br />
+				<Br />
+				<Br />
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Br />
+				<Content>(5) Open the APP and turn on the Bluetooth function on your phone. At this point, you need to  </Content>
+				<Br />
+				<Content>     ensure that no other devices are connected to the phone’s Bluetooth.</Content>
+				<Br />
+				<Content>(6) Opening the APP brings you to the following page.</Content>
+				<Br />
+				<Content>(7) If you cannot set up StarCharge account, connect to the DC wallbox through the Workbench </Content>
+				<Br />
+				<Content>     option as shown in the top right-hand side of the window.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="11.338582677165356" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
