@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u5edf" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Table Self="u5edfi5ef4" HeaderRowCount="1" FooterRowCount="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" BodyRowCount="2" ColumnCount="2" AppliedTableStyle="TableStyle/表头灰" TableDirection="LeftToRightDirection">
+					<Row Self="u5edfi5ef4Row0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="13.214566929126702" MinimumHeight="13.214566929126702" />
+					<Row Self="u5edfi5ef4Row1" Name="1" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="198.00000000244927" MinimumHeight="198.00000000244927" />
+					<Row Self="u5edfi5ef4Row2" Name="2" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="68.31496063290797" MinimumHeight="68.31496063290797" />
+					<Column Self="u5edfi5ef4Column0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="196.04921259842519" />
+					<Column Self="u5edfi5ef4Column1" Name="1" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="147.71850393700788" />
+					<Cell Self="u5edfi5ef4i0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="8">
+								<Content>Illustration</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u5edfi5ef4i1" Name="1:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="8">
+								<Content>Instructions</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u5edfi5ef4i4" Name="0:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Br />
+								<Br />
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u5edfi5ef4i5" Name="1:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>Connect each terminal to the correct connector in the terminal input block. Then, secure the terminal for the input cable correctly. The stripping length of the input cable should not be less than the length of the piping type terminal. </Content>
+								<Br />
+								<Br />
+								<Content>The rubber ring hole corresponds to the position of the terminal block. For example:</Content>
+								<Br />
+								<Content>CN1—P0</Content>
+								<Br />
+								<Content>CN2—P1</Content>
+								<Br />
+								<Content>CN3—P2</Content>
+								<Br />
+								<Content>CN4—P3</Content>
+								<Br />
+								<Content>CN5—P4-P8</Content>
+								<Br />
+								<Content>CN6—P9</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u5edfi5ef4i8" Name="0:2" RowSpan="1" ColumnSpan="2" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" LeftIndent="8.503937007874017" FirstLineIndent="-8.503937007874017" Justification="LeftAlign" BulletsAndNumberingListType="BulletList">
+							<Properties>
+								<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+								<BulletsFont type="string">Arial</BulletsFont>
+								<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>Recommended cable cross-section: 5×4mm² (5×11AWG)</Content>
+								<Br />
+								<Content>Maximum cross-section for solid conductors: 6mm²</Content>
+								<Br />
+								<Content>Maximum cross-section for flexible conductors (ferrule required): 6mm² </Content>
+								<Br />
+								<Content>Cable outer diameter: 12.2-18.3mm</Content>
+								<Br />
+								<Content>Choose appropriate conduit in accordance with all applicable local, state and national electrical codes and standards. Make sure the circuit breaker is turned off before installation.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
