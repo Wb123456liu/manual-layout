@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI手册排版工具 - 旗舰版 Pro v3</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Microsoft YaHei", Arial, sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298); min-height: 100vh; padding: 10px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 10px; }
+        .header h1 { color: white; font-size: 18px; }
+        .steps { display: flex; justify-content: center; margin-bottom: 10px; gap: 5px; flex-wrap: wrap; }
+        .step { display: flex; align-items: center; background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 15px; color: rgba(255,255,255,0.6); font-size: 10px; }
+        .step-num { background: rgba(255,255,255,0.2); width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 4px; font-weight: bold; }
+        .step.active { background: white; color: #1e3c72; }
+        .step.active .step-num { background: #1e3c72; color: white; }
+        .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .panel { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-height: 80vh; overflow-y: auto; }
+        .section-title { font-size: 13px; font-weight: bold; color: #1e3c72; margin-bottom: 10px; }
+        .upload-box { border: 2px dashed #10b981; border-radius: 8px; padding: 15px; text-align: center; background: #ecfdf5; cursor: pointer; }
+        .upload-box:hover { background: #d1fae5; }
+        .btn { padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 11px; font-weight: bold; }
+        .btn-primary { background: #1e3c72; color: white; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-outline { background: transparent; border: 2px solid #1e3c72; color: #1e3c72; }
+        .btn-group { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+        .btn-full { width: 100%; }
+        textarea { width: 100%; min-height: 150px; padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 11px; resize: vertical; }
+        .preview-box { background: #4a5568; padding: 8px; border-radius: 8px; height: 100%; }
+        .preview-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .preview-title { color: white; font-weight: bold; font-size: 11px; }
+        .preview-badge { background: white; padding: 2px 8px; border-radius: 10px; font-size: 9px; color: #1e3c72; }
+        .preview-content { background: white; padding: 10mm; min-height: 180mm; font-size: 9pt; overflow-y: auto; max-height: 70vh; }
+        .status { padding: 6px; border-radius: 4px; margin: 6px 0; font-size: 10px; }
+        .s-success { background: #d1fae5; color: #065f46; }
+        .s-info { background: #dbeafe; color: #1e40af; }
+        .s-warning { background: #fef3c7; color: #92400e; }
+        .s-error { background: #fee2e2; color: #991b1b; }
+        .help { font-size: 9px; color: #666; margin-top: 6px; background: #f8fafc; padding: 6px; border-radius: 4px; }
+        .progress-bar { width: 100%; height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; margin: 8px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #10b981, #059669); transition: width 0.2s; }
+        .large-doc-info { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px; margin: 8px 0; }
+        .large-doc-info .title { font-weight: bold; color: #1e40af; font-size: 11px; }
+        .large-doc-info .stats { display: flex; gap: 15px; margin-top: 5px; font-size: 10px; color: #666; flex-wrap: wrap; }
+        .settings-group { background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 10px; }
+        .settings-title { font-size: 11px; font-weight: bold; color: #1e3c72; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+        .setting-row { display: flex; align-items: center; margin-bottom: 6px; font-size: 10px; }
+        .setting-label { width: 70px; color: #666; }
+        .setting-input { flex: 1; padding: 4px; border: 1px solid #ddd; border-radius: 3px; font-size: 10px; }
+        .color-picker { display: flex; gap: 8px; margin: 8px 0; align-items: center; flex-wrap: wrap; }
+        .color-picker label { font-size: 10px; min-width: 40px; }
+        .color-picker input[type="color"] { width: 30px; height: 25px; border: none; cursor: pointer; }
+        .checkbox-row { display: flex; align-items: center; gap: 8px; font-size: 10px; }
+        .img-preview { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+        .img-preview-item { position: relative; width: 70px; height: 70px; }
+        .img-preview-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 2px solid #ddd; }
+        .img-preview-item .remove-btn { position: absolute; top: -5px; right: -5px; width: 16px; height: 16px; background: #dc3545; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 10px; }
+        .preset-templates { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+        .preset-tpl { padding: 8px 12px; border: 2px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-size: 10px; }
+        .preset-tpl:hover { border-color: #667eea; background: #f0f4ff; }
+        .preset-tpl.selected { border-color: #667eea; background: #e0e7ff; }
+        @media (max-width: 700px) { .main-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI手册排版工具 - 旗舰版 Pro v3</h1>
+            <div style="color:rgba(255,255,255,0.7);font-size:10px;margin-top:4px;">支持 Word/PDF · 快速解析 · 实时预览</div>
+        </div>
+        <div class="steps">
+            <div class="step active" id="s1"><span class="step-num">1</span>模板</div>
+            <div class="step" id="s2"><span class="step-num">2</span>内容</div>
+            <div class="step" id="s3"><span class="step-num">3</span>AI解析</div>
+            <div class="step" id="s4"><span class="step-num">4</span>调整</div>
+            <div class="step" id="s5"><span class="step-num">5</span>导出</div>
+        </div>
+        <div class="main-grid">
+            <div class="panel">
+                <div id="p1">
+                    <div class="section-title">📁 步骤1: 选择模板风格</div>
+                    <div class="preset-templates">
+                        <div class="preset-tpl selected" onclick="selectPreset('schneider')">🔷 Schneider</div>
+                        <div class="preset-tpl" onclick="selectPreset('abb')">🔶 ABB</div>
+                        <div class="preset-tpl" onclick="selectPreset('siemens')">🔷 Siemens</div>
+                        <div class="preset-tpl" onclick="selectPreset('default')">⬜ 默认</div>
+                    </div>
+                    <div class="section-title">🖼️ 封面图片</div>
+                    <div class="upload-box" onclick="document.getElementById('tplImg').click()">
+                        <div>🖼️ 点击上传封面</div>
+                        <input type="file" id="tplImg" style="display:none" accept="image/*" onchange="loadCover(this)">
+                    </div>
+                    <div id="tplStatus"></div>
+                    <div class="btn-group"><button class="btn btn-primary btn-full" onclick="go(2)">下一步 →</button></div>
+                </div>
+                
+                <div id="p2" style="display:none;">
+                    <div class="section-title">📄 步骤2: 上传文档</div>
+                    <div class="upload-box" onclick="document.getElementById('docFile').click()" id="dropZone">
+                        <div style="font-size:20px;">📄</div>
+                        <div style="font-weight:bold;">点击或拖拽上传 Word/PDF</div>
+                        <div style="font-size:10px;color:#666;">支持 .docx .pdf 格式</div>
+                        <input type="file" id="docFile" style="display:none" accept=".docx,.pdf,.txt,.md" onchange="loadDocument(this)">
+                    </div>
+                    <div id="cntStatus"></div>
+                    <div class="progress-bar" id="progressBar" style="display:none;"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+                    
+                    <div class="large-doc-info" id="docInfo" style="display:none;">
+                        <div class="title">📊 文档信息</div>
+                        <div class="stats">
+                            <span>📄 字数: <strong id="charCount">0</strong></span>
+                            <span>📑 章节: <strong id="sectionCount">0</strong></span>
+                            <span>🖼️ 图片: <strong id="imgCount">0</strong></span>
+                        </div>
+                    </div>
+                    
+                    <div class="section-title">📝 文字内容</div>
+                    <textarea id="content" oninput="onInput()" placeholder="文档内容将显示在这里..."></textarea>
+                    
+                    <div class="section-title">🖼️ 提取的图片 (<span id="imgNum">0</span>张)</div>
+                    <div class="img-preview" id="imgPreview"></div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="go(1)">←</button>
+                        <button class="btn btn-success btn-full" onclick="go(3)">AI解析 →</button>
+                    </div>
+                </div>
+                
+                <div id="p3" style="display:none;">
+                    <div class="section-title">🤖 步骤3: AI解析</div>
+                    <div id="parseStatus" class="status s-info">点击开始解析</div>
+                    <div class="btn-group">
+                        <button class="btn btn-success btn-full" onclick="runAI()">🚀 开始解析</button>
+                        <button class="btn btn-outline" onclick="go(2)">← 返回</button>
+                    </div>
+                </div>
+                
+                <div id="p4" style="display:none;">
+                    <div class="section-title">⚙️ 步骤4: 调整</div>
+                    <div class="settings-group">
+                        <div class="settings-title">🎨 样式</div>
+                        <div class="color-picker">
+                            <label>主色:</label><input type="color" id="mainColor" value="#0066cc" onchange="render()">
+                            <label>警告:</label><input type="color" id="dangerColor" value="#dc3545" onchange="render()">
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">标题:</span>
+                            <input type="text" class="setting-input" id="docTitle" value="产品手册" oninput="render()">
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <div class="settings-title">📄 页眉页脚</div>
+                        <div class="checkbox-row"><input type="checkbox" id="showHeader" checked onchange="render()"> <label>显示页眉</label></div>
+                        <div class="checkbox-row"><input type="checkbox" id="showFooter" checked onchange="render()"> <label>显示页脚</label></div>
+                    </div>
+                    <div class="settings-group">
+                        <div class="settings-title">🖼️ 图片 (<span id="imgNum4">0</span>张)</div>
+                        <div class="img-preview" id="imgLib"></div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="go(3)">←</button>
+                        <button class="btn btn-success btn-full" onclick="go(5)">导出 →</button>
+                    </div>
+                </div>
+                
+                <div id="p5" style="display:none;">
+                    <div class="section-title">📤 步骤5: 导出</div>
+                    <div class="large-doc-info">
+                        <div><strong>文档:</strong> <span id="sumDoc">-</span></div>
+                        <div><strong>图片:</strong> <span id="sumImg">0</span>张</div>
+                        <div><strong>章节:</strong> <span id="sumCh">0</span>个</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="printPDF()">🖨️ PDF</button>
+                        <button class="btn btn-primary" onclick="saveHTML()">💾 HTML</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="go(4)">←</button>
+                        <button class="btn btn-outline" onclick="location.reload()">🔄 重置</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel">
+                <div class="preview-box">
+                    <div class="preview-header">
+                        <span class="preview-title">👁️ 实时预览</span>
+                        <span class="preview-badge" id="badge">待上传</span>
+                    </div>
+                    <div class="preview-content" id="preview">
+                        <div style="text-align:center;padding:40mm;color:#999;">请上传文档</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- Mammoth.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    
+    <script>
+        // 初始化
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        
+        var $ = function(id) { return document.getElementById(id); };
+        var curStep = 1, tplImg = null, cntImgs = [], docName = '';
+        
+        var presets = {
+            schneider: { main: '#0066cc', danger: '#dc3545' },
+            abb: { main: '#ff6600', danger: '#dc3545' },
+            siemens: { main: '#009999', danger: '#ff6600' },
+            default: { main: '#333333', danger: '#dc3545' }
+        };
+        
+        function selectPreset(name) {
+            var p = presets[name];
+            $('mainColor').value = p.main;
+            $('dangerColor').value = p.danger;
+            document.querySelectorAll('.preset-tpl').forEach(function(e) {
+                e.classList.toggle('selected', e.textContent.includes(name.charAt(0).toUpperCase() + name.slice(1)) || e === event.target);
+            });
+            render();
+        }
+        
+        function go(n) {
+            $('s' + curStep).className = 'step';
+            $('p' + curStep).style.display = 'none';
+            curStep = n;
+            $('s' + curStep).className = 'step active';
+            $('p' + curStep).style.display = 'block';
+            if(n === 4) updateImgLib();
+            if(n === 5) updateSum();
+            render();
+        }
+        
+        function loadCover(input) {
+            var f = input.files[0];
+            if(!f) return;
+            var r = new FileReader();
+            r.onload = function(e) { tplImg = e.target.result; render(); };
+            r.readAsDataURL(f);
+        }
+        
+        // ========== 核心解析 ==========
+        async function loadDocument(input) {
+            var file = input.files[0];
+            if(!file) return;
+            
+            var start = Date.now();
+            docName = file.name;
+            cntImgs = [];
+            
+            $('progressBar').style.display = 'block';
+            $('progressFill').style.width = '5%';
+            $('cntStatus').innerHTML = '<div class="status s-info">⏳ 正在解析...</div>';
+            
+            try {
+                var ext = file.name.split('.').pop().toLowerCase();
+                var result;
+                
+                if(ext === 'pdf') {
+                    result = await parsePDF(file);
+                } else if(ext === 'docx') {
+                    result = await parseWord(file);
+                } else if(ext === 'txt' || ext === 'md') {
+                    result = await parseText(file);
+                } else {
+                    throw new Error('不支持的格式');
+                }
+                
+                $('content').value = result.text;
+                cntImgs = result.images || [];
+                
+                // 更新统计
+                $('docInfo').style.display = 'block';
+                $('charCount').textContent = result.text.length;
+                $('sectionCount').textContent = (result.text.match(/^#+\s/gm) || []).length;
+                $('imgCount').textContent = cntImgs.length;
+                $('imgNum').textContent = cntImgs.length;
+                
+                // 更新图片预览
+                updateImgPreview();
+                
+                var elapsed = Date.now() - start;
+                $('cntStatus').innerHTML = '<div class="status s-success">✅ 完成！耗时 ' + elapsed + 'ms</div>';
+                $('progressFill').style.width = '100%';
+                
+                setTimeout(function() { $('progressBar').style.display = 'none'; }, 500);
+                
+                onInput();
+                
+            } catch(err) {
+                $('cntStatus').innerHTML = '<div class="status s-error">❌ ' + err.message + '</div>';
+                $('progressBar').style.display = 'none';
+            }
+        }
+        
+        // 解析纯文本
+        function parseText(file) {
+            return new Promise(function(resolve, reject) {
+                var r = new FileReader();
+                r.onload = function(e) { resolve({ text: e.target.result, images: [] }); };
+                r.onerror = reject;
+                r.readAsText(file);
+            });
+        }
+        
+        // 解析 PDF
+        async function parsePDF(file) {
+            var text = '', images = [];
+            var buffer = await file.arrayBuffer();
+            var pdf = await pdfjsLib.getDocument({ data: buffer }).promise;
+            
+            for(var i = 1; i <= pdf.numPages; i++) {
+                $('progressFill').style.width = (5 + (i / pdf.numPages) * 90) + '%';
+                
+                var page = await pdf.getPage(i);
+                var content = await page.getTextContent();
+                text += content.items.map(function(item) { return item.str; }).join(' ') + '\n\n';
+            }
+            
+            return { text: text, images: images };
+        }
+        
+        // 解析 Word
+        async function parseWord(file) {
+            var buffer = await file.arrayBuffer();
+            var images = [];
+            
+            $('progressFill').style.width = '30%';
+            
+            // 提取文字
+            var textResult = await mammoth.extractRawText({ arrayBuffer: buffer });
+            var text = textResult.value;
+            
+            $('progressFill').style.width = '60%';
+            
+            // 提取图片
+            var imgResult = await mammoth.convertToHtml({
+                arrayBuffer: buffer,
+                convertImage: mammoth.images.imgElement(function(image) {
+                    return image.read("base64").then(function(imgBuffer) {
+                        var src = "data:" + image.contentType + ";base64," + imgBuffer;
+                        images.push(src);
+                        return { src: src };
+                    });
+                })
+            });
+            
+            $('progressFill').style.width = '90%';
+            
+            return { text: text, images: images };
+        }
+        
+        function updateImgPreview() {
+            var el = $('imgPreview');
+            if(cntImgs.length === 0) {
+                el.innerHTML = '<div style="font-size:10px;color:#999;padding:5px;">暂无图片</div>';
+                return;
+            }
+            var html = '';
+            cntImgs.forEach(function(src, i) {
+                html += '<div class="img-preview-item"><img src="' + src + '"><button class="remove-btn" onclick="removeImg(' + i + ')">×</button></div>';
+            });
+            el.innerHTML = html;
+        }
+        
+        function removeImg(i) {
+            cntImgs.splice(i, 1);
+            $('imgNum').textContent = cntImgs.length;
+            $('imgCount').textContent = cntImgs.length;
+            updateImgPreview();
+            render();
+        }
+        
+        function onInput() {
+            var text = $('content').value;
+            $('charCount').textContent = text.length;
+            $('sectionCount').textContent = (text.match(/^#+\s/gm) || []).length;
+            render();
+        }
+        
+        function runAI() {
+            $('parseStatus').className = 'status s-success';
+            $('parseStatus').textContent = '✅ 解析完成！';
+            setTimeout(function() { go(4); }, 300);
+        }
+        
+        function updateImgLib() {
+            $('imgNum4').textContent = cntImgs.length;
+            var el = $('imgLib');
+            if(cntImgs.length === 0) {
+                el.innerHTML = '<div style="font-size:10px;color:#999;">暂无图片</div>';
+                return;
+            }
+            var html = '';
+            cntImgs.forEach(function(src) {
+                html += '<div class="img-preview-item"><img src="' + src + '"></div>';
+            });
+            el.innerHTML = html;
+        }
+        
+        function updateSum() {
+            $('sumDoc').textContent = docName || '-';
+            $('sumImg').textContent = cntImgs.length;
+            $('sumCh').textContent = ($('content').value.match(/^#+\s/gm) || []).length;
+        }
+        
+        function render() {
+            var main = $('mainColor').value;
+            var danger = $('dangerColor').value;
+            var title = $('docTitle').value || '产品手册';
+            var showHeader = $('showHeader').checked;
+            var showFooter = $('showFooter').checked;
+            var text = $('content').value;
+            
+            if(!text.trim()) {
+                $('preview').innerHTML = '<div style="text-align:center;padding:40mm;color:#999;">请上传文档</div>';
+                $('badge').textContent = '待上传';
+                return;
+            }
+            
+            var lines = text.split('\n');
+            var h = '';
+            var inSection = false;
+            var imgIdx = 0;
+            
+            // 封面
+            if(tplImg) {
+                h += '<div style="text-align:center;padding:20mm;border-bottom:2px solid ' + main + ';">';
+                h += '<h1 style="font-size:20pt;color:' + main + ';">' + title + '</h1>';
+                h += '<img src="' + tplImg + '" style="max-width:80%;max-height:150px;margin-top:10mm;">';
+                h += '</div>';
+            }
+            
+            h += '<div style="padding:5mm;">';
+            
+            lines.forEach(function(line) {
+                line = line.trim();
+                if(!line) return;
+                
+                // 标题
+                if(line.match(/^#+\s/)) {
+                    var level = line.match(/^#+/)[0].length;
+                    var titleText = line.replace(/^#+\s/, '');
+                    var sizes = ['14pt', '12pt', '10pt'];
+                    h += '<h' + Math.min(level, 3) + ' style="font-size:' + sizes[Math.min(level-1, 2)] + ';color:' + main + ';border-bottom:1px solid ' + main + ';padding-bottom:2mm;margin:5mm 0 3mm;">' + titleText + '</h' + Math.min(level, 3) + '>';
+                }
+                // 警示
+                else if(line.match(/^【危险】/) || line.match(/^DANGER/i)) {
+                    h += '<div style="border-left:3mm solid ' + danger + ';background:#fee2e2;padding:3mm 5mm;margin:3mm 0;"><strong style="color:' + danger + ';">⚠️ 危险</strong>: ' + line.replace(/^【危险】\s*/, '').replace(/^DANGER:?\s*/i, '') + '</div>';
+                }
+                else if(line.match(/^【警告】/) || line.match(/^WARNING/i)) {
+                    h += '<div style="border-left:3mm solid #ffc107;background:#fef3c7;padding:3mm 5mm;margin:3mm 0;"><strong style="color:#92400e;">⚠️ 警告</strong>: ' + line.replace(/^【警告】\s*/, '').replace(/^WARNING:?\s*/i, '') + '</div>';
+                }
+                // 列表
+                else if(line.match(/^[-*•]\s/)) {
+                    h += '<li style="margin:1mm 0 1mm 5mm;">' + line.replace(/^[-*•]\s/, '') + '</li>';
+                }
+                // 图片
+                else if(line.match(/\[图片(\d+)\]/)) {
+                    var idx = parseInt(line.match(/\[图片(\d+)\]/)[1]) - 1;
+                    if(cntImgs[idx]) {
+                        h += '<div style="text-align:center;margin:3mm 0;"><img src="' + cntImgs[idx] + '" style="max-width:90%;max-height:100px;"></div>';
+                    }
+                }
+                // 普通文字
+                else {
+                    h += '<p style="margin:2mm 0;line-height:1.4;">' + line + '</p>';
+                }
+            });
+            
+            h += '</div>';
+            
+            if(showFooter) {
+                h += '<div style="border-top:1px solid #ddd;padding-top:2mm;margin-top:5mm;font-size:8pt;color:#666;text-align:center;">产品手册</div>';
+            }
+            
+            $('preview').innerHTML = h;
+            $('badge').textContent = docName || '已编辑';
+        }
+        
+        function printPDF() {
+            var w = window.open('', '_blank');
+            w.document.write('<html><head><title>' + $('docTitle').value + '</title><style>@page{size:A4;margin:10mm}body{font-family:"Microsoft YaHei",Arial;}</style></head><body>' + $('preview').innerHTML + '</body></html>');
+            w.document.close();
+            w.print();
+        }
+        
+        function saveHTML() {
+            var title = $('docTitle').value;
+            var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + title + '</title><style>body{font-family:"Microsoft YaHei",Arial;max-width:800px;margin:0 auto;padding:20px;}</style></head><body>' + $('preview').innerHTML + '</body></html>';
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([html], {type:'text/html'}));
+            a.download = title + '.html';
+            a.click();
+        }
+        
+        // 拖拽支持
+        var dropZone = $('dropZone');
+        dropZone.addEventListener('dragover', function(e) { e.preventDefault(); this.style.borderColor = '#059669'; });
+        dropZone.addEventListener('dragleave', function(e) { this.style.borderColor = '#10b981'; });
+        dropZone.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.borderColor = '#10b981';
+            if(e.dataTransfer.files.length) {
+                $('docFile').files = e.dataTransfer.files;
+                loadDocument($('docFile'));
+            }
+        });
+    </script>
+</body>
+</html>
