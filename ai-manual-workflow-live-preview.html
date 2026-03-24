@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AI产品手册排版工具 - 实时预览版</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; font-size: 14px; color: #333; background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); min-height: 100vh; padding: 15px; }
+        .container { max-width: 1800px; margin: 0 auto; }
+        h1 { text-align: center; color: white; margin-bottom: 12px; font-size: 20px; }
+
+        .steps { display: flex; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+        .step { display: flex; align-items: center; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 11px; }
+        .step-num { background: rgba(255,255,255,0.3); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 5px; }
+        .step.active { background: white; color: #1e3c72; }
+        .step.active .step-num { background: #1e3c72; color: white; }
+        .step.completed { background: #10b981; color: white; }
+        .step.completed .step-num { background: white; color: #10b981; }
+
+        .main-grid { display: grid; grid-template-columns: 520px 1fr; gap: 15px; }
+        .panel { background: white; border-radius: 12px; padding: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); max-height: 750px; overflow-y: auto; }
+
+        .template-section { margin-bottom: 14px; }
+        .template-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .template-card { border: 3px solid #e2e8f0; border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.2s; text-align: center; background: #fff; }
+        .template-card:hover { transform: scale(1.02); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+        .template-card.selected { border-width: 3px; background: #f0f9ff; }
+        .template-badge { display: inline-block; padding: 5px 12px; border-radius: 15px; color: white; font-size: 11px; font-weight: bold; margin-bottom: 6px; }
+        .template-name { font-size: 12px; font-weight: bold; color: #333; }
+
+        .preview-container { background: #4a5568; padding: 15px; border-radius: 10px; overflow: auto; max-height: 680px; }
+        .preview-page { background: white; padding: 18mm; min-height: 280mm; box-shadow: 0 4px 20px rgba(0,0,0,0.4); font-size: 9pt; position: relative; }
+
+        .btn { padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: bold; transition: all 0.2s; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-primary { background: #1e3c72; color: white; }
+        .btn-primary:hover { background: #2a5298; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-success:hover { background: #059669; }
+        .btn-outline { background: transparent; border: 2px solid #1e3c72; color: #1e3c72; }
+        .btn-outline:hover { background: #1e3c72; color: white; }
+        .btn-group { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
+
+        .tab-container { margin-bottom: 12px; }
+        .tab-buttons { display: flex; border-bottom: 2px solid #e2e8f0; margin-bottom: 12px; }
+        .tab-btn { padding: 8px 16px; border: none; background: none; cursor: pointer; font-size: 11px; color: #666; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }
+        .tab-btn:hover { color: #1e3c72; }
+        .tab-btn.active { color: #1e3c72; border-bottom-color: #1e3c72; font-weight: bold; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .settings-section { margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e2e8f0; }
+        .settings-title { font-size: 12px; font-weight: bold; margin-bottom: 10px; color: #1e3c72; }
+        .setting-row { display: flex; align-items: center; margin-bottom: 8px; }
+        .setting-label { width: 70px; font-size: 11px; color: #666; }
+        .setting-input, .setting-select { flex: 1; padding: 6px 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px; }
+        .setting-input:focus, .setting-select:focus { outline: none; border-color: #1e3c72; }
+
+        .feishu-link { display: inline-block; background: #1e3c72; color: white; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 11px; transition: all 0.2s; }
+        .feishu-link:hover { background: #2a5298; transform: translateY(-1px); }
+
+        .preview-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .current-template { background: white; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+
+        .status-box { padding: 10px; border-radius: 6px; margin-top: 10px; font-size: 11px; }
+        .status-success { background: #d1fae5; color: #065f46; }
+        .status-info { background: #dbeafe; color: #1e40af; }
+
+        /* 手册预览样式 */
+        .manual-cover { text-align: center; padding: 40mm 20mm; border-bottom: 5px solid #0066cc; margin-bottom: 20px; }
+        .manual-cover h1 { font-size: 24pt; color: #1e3c72; margin-bottom: 10px; }
+        .manual-cover .product-name { font-size: 18pt; font-weight: bold; margin-bottom: 5px; }
+        .manual-cover .manual-type { font-size: 12pt; color: #666; margin-bottom: 30px; }
+        .manual-cover .doc-info { font-size: 10pt; color: #999; }
+
+        .chapter { margin-bottom: 25px; page-break-inside: avoid; }
+        .chapter-title { font-size: 14pt; font-weight: bold; padding: 8px 15px; margin-bottom: 15px; border-left: 4px solid #0066cc; background: linear-gradient(90deg, #f0f9ff, transparent); }
+        .chapter-content { padding: 0 15px; line-height: 1.8; }
+
+        .alert-box { padding: 12px 15px; border-radius: 6px; margin: 12px 0; display: flex; align-items: flex-start; gap: 10px; }
+        .alert-icon { font-size: 20px; flex-shrink: 0; }
+        .alert-content { flex: 1; }
+        .alert-title { font-weight: bold; font-size: 10pt; margin-bottom: 3px; }
+        .alert-text { font-size: 9pt; }
+        .alert-danger { background: #fee2e2; border: 2px solid #dc3545; }
+        .alert-danger .alert-title { color: #991b1b; }
+        .alert-warning { background: #fef3c7; border: 2px solid #f59e0b; }
+        .alert-warning .alert-title { color: #92400e; }
+        .alert-notice { background: #dbeafe; border: 2px solid #3b82f6; }
+        .alert-notice .alert-title { color: #1e40af; }
+
+        .doc-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9pt; }
+        .doc-table th, .doc-table td { border: 1px solid #e2e8f0; padding: 8px 10px; text-align: left; }
+        .doc-table th { background: #f8fafc; font-weight: bold; }
+
+        .item-list { margin: 10px 0; padding-left: 20px; }
+        .item-list li { margin: 5px 0; font-size: 9pt; }
+
+        .page-number { position: absolute; bottom: 10mm; right: 15mm; font-size: 8pt; color: #999; }
+
+        @media print { 
+            body { background: white; } 
+            .panel:first-child, .steps, h1 { display: none; } 
+            .main-grid { display: block; } 
+            .preview-container { background: none; padding: 0; max-height: none; } 
+            .preview-page { box-shadow: none; padding: 0; } 
+        }
+
+        @media (max-width: 1200px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 AI产品手册排版工具</h1>
+
+        <div class="steps">
+            <div class="step active" id="step1"><span class="step-num">1</span>选择模板</div>
+            <div class="step" id="step2"><span class="step-num">2</span>导入内容</div>
+            <div class="step" id="step3"><span class="step-num">3</span>详细设置</div>
+            <div class="step" id="step4"><span class="step-num">4</span>预览导出</div>
+        </div>
+
+        <div class="main-grid">
+            <div class="panel">
+                <!-- 步骤1: 选择模板 -->
+                <div id="panel1">
+                    <div class="settings-title"><span>🎨</span>步骤1: 选择手册模板 <span style="font-weight:normal;color:#666;font-size:10px;">(点击后右侧预览立即变化)</span></div>
+
+                    <div class="template-grid">
+                        <div class="template-card selected" id="tpl-schneider" onclick="selectTemplate('schneider')">
+                            <div class="template-badge" style="background:#0066cc;">施耐德</div>
+                            <div class="template-name">EVlink Pro DC</div>
+                        </div>
+                        <div class="template-card" id="tpl-siemens" onclick="selectTemplate('siemens')">
+                            <div class="template-badge" style="background:#009999;">西门子</div>
+                            <div class="template-name">Siemens</div>
+                        </div>
+                        <div class="template-card" id="tpl-abb" onclick="selectTemplate('abb')">
+                            <div class="template-badge" style="background:#ff6600;">ABB</div>
+                            <div class="template-name">ABB Terra</div>
+                        </div>
+                        <div class="template-card" id="tpl-chuneng" onclick="selectTemplate('chuneng')">
+                            <div class="template-badge" style="background:#8b5cf6;">储能模板</div>
+                            <div class="template-name">储能手册</div>
+                        </div>
+                        <div class="template-card" id="tpl-xingmai" onclick="selectTemplate('xingmai')">
+                            <div class="template-badge" style="background:#06b6d4;">星迈</div>
+                            <div class="template-name">交流模板</div>
+                        </div>
+                        <div class="template-card" id="tpl-custom" onclick="selectTemplate('custom')">
+                            <div class="template-badge" style="background:#6366f1;">自定义</div>
+                            <div class="template-name">自定义颜色</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:12px;">
+                        <a href="https://wbenergy.feishu.cn/drive/folder/Qma1fhKZLl1keVdspIicw5bFnef" target="_blank" class="feishu-link">📚 飞书模板库</a>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="toStep(2)" style="width:100%;">下一步 → 导入内容</button>
+                    </div>
+                </div>
+
+                <!-- 步骤2: 导入内容 -->
+                <div id="panel2" style="display:none;">
+                    <div class="settings-title"><span>📥</span>步骤2: 导入手册内容</div>
+                    <textarea class="setting-input" id="manualContent" placeholder="在此粘贴手册内容...
+
+# Legal Information
+© 2024 Schneider Electric. All rights reserved.
+
+# Safety
+DANGER: Risk of electric shock. Disconnect power before servicing.
+WARNING: Installation must be performed by qualified personnel.
+
+# Product Introduction
+This product is a high-efficiency DC charging station..." style="width:100%;min-height:200px;resize:vertical;font-family:monospace;" oninput="handleContentInput()"></textarea>
+                    <div id="contentStatus" class="status-box status-success" style="display:none;"></div>
+                    
+                    <div style="margin-top:12px;">
+                        <input type="file" id="fileInput" accept=".docx,.doc,.txt,.md" style="display:none;" onchange="handleFileUpload(event)">
+                        <button class="btn btn-outline" onclick="document.getElementById('fileInput').click()" style="width:100%;">📁 上传文件 (Word/TXT/MD)</button>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="toStep(1)">← 上一步</button>
+                        <button class="btn btn-primary" onclick="parseContent(); toStep(3);" style="flex:1;">🤖 AI解析 →</button>
+                    </div>
+                </div>
+
+                <!-- 步骤3: 详细设置 -->
+                <div id="panel3" style="display:none;">
+                    <div class="settings-title"><span>⚙️</span>步骤3: 详细设置</div>
+
+                    <div class="tab-container">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" onclick="switchTab('doc')">📄 文档</button>
+                            <button class="tab-btn" onclick="switchTab('style')">🎨 样式</button>
+                            <button class="tab-btn" onclick="switchTab('color')">🌈 颜色</button>
+                        </div>
+
+                        <div class="tab-content active" id="tab-doc">
+                            <div class="settings-section">
+                                <div class="setting-row">
+                                    <div class="setting-label">产品名称</div>
+                                    <input type="text" class="setting-input" id="docProductName" value="EVlink Pro DC 180" onchange="renderPreview()">
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">手册类型</div>
+                                    <select class="setting-select" id="docType" onchange="renderPreview()">
+                                        <option>Commissioning Manual</option>
+                                        <option>Installation Manual</option>
+                                        <option>User Manual</option>
+                                        <option>Maintenance Manual</option>
+                                    </select>
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">文档编号</div>
+                                    <input type="text" class="setting-input" id="docNumber" value="GEX4300900" onchange="renderPreview()">
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">版本号</div>
+                                    <input type="text" class="setting-input" id="docVersion" value="V1.0" onchange="renderPreview()">
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">发布日期</div>
+                                    <input type="date" class="setting-input" id="docDate" onchange="renderPreview()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tab-style">
+                            <div class="settings-section">
+                                <div class="setting-row">
+                                    <div class="setting-label">正文字体</div>
+                                    <select class="setting-select" id="fontFamily" onchange="renderPreview()">
+                                        <option value="Arial, sans-serif">Arial</option>
+                                        <option value="'Times New Roman', serif">Times New Roman</option>
+                                        <option value="'Microsoft YaHei', sans-serif">微软雅黑</option>
+                                    </select>
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">正文字号</div>
+                                    <select class="setting-select" id="fontSize" onchange="renderPreview()">
+                                        <option value="9pt">9pt</option>
+                                        <option value="10pt">10pt</option>
+                                        <option value="11pt">11pt</option>
+                                    </select>
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">行间距</div>
+                                    <select class="setting-select" id="lineHeight" onchange="renderPreview()">
+                                        <option value="1.5">1.5</option>
+                                        <option value="1.6" selected>1.6</option>
+                                        <option value="1.8">1.8</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tab-color">
+                            <div class="settings-section">
+                                <div class="setting-row">
+                                    <div class="setting-label">主色调</div>
+                                    <input type="color" id="colorMain" value="#0066cc" onchange="updateCustomColor()" style="width:50px;height:25px;">
+                                    <span id="colorMainText" style="margin-left:8px;font-size:11px;">#0066cc</span>
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">警示色</div>
+                                    <input type="color" id="colorDanger" value="#dc3545" onchange="updateCustomColor()" style="width:50px;height:25px;">
+                                    <span id="colorDangerText" style="margin-left:8px;font-size:11px;">#dc3545</span>
+                                </div>
+                                <div class="setting-row">
+                                    <div class="setting-label">警告色</div>
+                                    <input type="color" id="colorWarning" value="#ffc107" onchange="updateCustomColor()" style="width:50px;height:25px;">
+                                    <span id="colorWarningText" style="margin-left:8px;font-size:11px;">#ffc107</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="toStep(2)">← 上一步</button>
+                        <button class="btn btn-success" onclick="toStep(4)" style="flex:1;">✅ 确认 → 预览导出</button>
+                    </div>
+                </div>
+
+                <!-- 步骤4: 预览导出 -->
+                <div id="panel4" style="display:none;">
+                    <div class="settings-title"><span>📄</span>步骤4: 预览与导出</div>
+                    <div style="background:#f0f9ff;padding:12px;border-radius:8px;margin-bottom:12px;font-size:11px;">
+                        <div><strong>模板:</strong> <span id="summaryTemplate">施耐德</span></div>
+                        <div><strong>产品:</strong> <span id="summaryProduct">EVlink Pro DC 180</span></div>
+                        <div><strong>章节:</strong> <span id="summaryChapters">0</span> 个</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="exportPDF()">📥 导出PDF</button>
+                        <button class="btn btn-outline" onclick="exportWord()">📝 导出Word</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="toStep(3)">← 上一步</button>
+                        <button class="btn btn-primary" onclick="location.reload()">🔄 重新开始</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧预览 -->
+            <div class="panel">
+                <div class="preview-header">
+                    <span style="font-weight:bold;color:#1e3c72;">👁️ 实时预览</span>
+                    <div class="current-template" id="currentTemplateBadge">当前: 施耐德</div>
+                </div>
+                <div class="preview-container">
+                    <div class="preview-page" id="preview"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== 全局状态 ====================
+        var currentTemplate = 'schneider';
+        var currentStep = 1;
+        var parsedChapters = null;
+
+        // ==================== 模板配置 ====================
+        var templates = {
+            schneider: { name: '施耐德', color: '#0066cc', danger: '#dc3545', warning: '#ffc107', headerStyle: 'solid', alertStyle: 'border' },
+            siemens: { name: '西门子', color: '#009999', danger: '#cc0000', warning: '#ff9900', headerStyle: 'gradient', alertStyle: 'box' },
+            abb: { name: 'ABB', color: '#ff6600', danger: '#ff0000', warning: '#ff9900', headerStyle: 'minimal', alertStyle: 'simple' },
+            chuneng: { name: '储能', color: '#8b5cf6', danger: '#7c3aed', warning: '#f59e0b', headerStyle: 'solid', alertStyle: 'warning' },
+            xingmai: { name: '星迈', color: '#06b6d4', danger: '#0891b2', warning: '#f59e0b', headerStyle: 'modern', alertStyle: 'notice' },
+            custom: { name: '自定义', color: '#6366f1', danger: '#dc3545', warning: '#ffc107', headerStyle: 'solid', alertStyle: 'border' }
+        };
+
+        // ==================== 默认章节数据 ====================
+        var defaultChapters = [
+            { title: "Legal Information", content: "© 2024 Schneider Electric. All rights reserved.\n\nThis document and the information contained herein are the exclusive property of Schneider Electric." },
+            { title: "Preface", content: "This guide describes the planning and commissioning procedures for the EVlink Pro DC charging station.", alerts: [
+                { type: 'notice', title: 'NOTICE', content: 'Read all instructions carefully before installation and commissioning.' }
+            ]},
+            { title: "Available Documentation", type: 'table', headers: ['Document Type', 'Reference', 'Content'], rows: [
+                ['Datasheet', '998-22029850', 'Full technical specifications'],
+                ['Installation Manual', 'GEX4300800', 'Installation guidelines'],
+                ['User Manual', 'GEX4300700', 'Operation instructions']
+            ]},
+            { title: "Safety Information", alerts: [
+                { type: 'danger', title: 'DANGER', content: 'Risk of electric shock. Disconnect all power sources before performing any maintenance or service work.' },
+                { type: 'warning', title: 'WARNING', content: 'Installation and commissioning must be performed by qualified personnel only.' },
+                { type: 'notice', title: 'NOTICE', content: 'Follow all local and national electrical codes and regulations.' }
+            ]},
+            { title: "1 Prepare for Commissioning", content: "This section describes the preparation required before commissioning the charging station.", items: [
+                'Ethernet cable Cat5e or higher',
+                'Screwdriver set (Phillips and flathead)',
+                'Laptop PC with web browser',
+                'Multimeter for electrical testing',
+                'Personal protective equipment (PPE)'
+            ]},
+            { title: "2 Configuration", content: "This section describes the configuration parameters and network settings for the charging station.\n\nConnect to the charging station via the web interface using the default IP address 192.168.1.1." },
+            { title: "3 Testing and Verification", content: "Perform the following tests after configuration is complete to ensure proper operation:\n\n1. Power supply verification\n2. Communication test\n3. Charging test with test vehicle\n4. Safety function verification" }
+        ];
+
+        // ==================== 初始化 ====================
+        window.onload = function() {
+            // 设置默认日期
+            document.getElementById('docDate').value = new Date().toISOString().split('T')[0];
+            renderPreview();
+        };
+
+        // ==================== 模板选择 ====================
+        function selectTemplate(name) {
+            currentTemplate = name;
+            var tpl = templates[name];
+
+            // 更新选中状态
+            document.querySelectorAll('.template-card').forEach(function(el) {
+                el.classList.remove('selected');
+                el.style.borderColor = '#e2e8f0';
+            });
+
+            var selected = document.getElementById('tpl-' + name);
+            selected.classList.add('selected');
+            selected.style.borderColor = tpl.color;
+
+            // 更新颜色选择器
+            document.getElementById('colorMain').value = tpl.color;
+            document.getElementById('colorDanger').value = tpl.danger;
+            document.getElementById('colorWarning').value = tpl.warning;
+            document.getElementById('colorMainText').textContent = tpl.color;
+            document.getElementById('colorDangerText').textContent = tpl.danger;
+            document.getElementById('colorWarningText').textContent = tpl.warning;
+
+            // 更新预览
+            document.getElementById('currentTemplateBadge').textContent = '当前: ' + tpl.name;
+            renderPreview();
+        }
+
+        // ==================== 步骤切换 ====================
+        function toStep(step) {
+            // 更新步骤状态
+            for (var i = 1; i <= 4; i++) {
+                var stepEl = document.getElementById('step' + i);
+                stepEl.classList.remove('active', 'completed');
+                if (i < step) stepEl.classList.add('completed');
+                if (i === step) stepEl.classList.add('active');
+                
+                document.getElementById('panel' + i).style.display = i === step ? 'block' : 'none';
+            }
+            currentStep = step;
+
+            // 步骤4时更新摘要
+            if (step === 4) {
+                document.getElementById('summaryTemplate').textContent = templates[currentTemplate].name;
+                document.getElementById('summaryProduct').textContent = document.getElementById('docProductName').value;
+                document.getElementById('summaryChapters').textContent = parsedChapters ? parsedChapters.length : defaultChapters.length;
+            }
+
+            renderPreview();
+        }
+
+        // ==================== 标签切换 ====================
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+            document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tab).classList.add('active');
+        }
+
+        // ==================== 内容处理 ====================
+        function handleContentInput() {
+            var content = document.getElementById('manualContent').value;
+            var status = document.getElementById('contentStatus');
+            if (content.length > 0) {
+                status.style.display = 'block';
+                status.textContent = '✅ 已输入 ' + content.length + ' 字符';
+            } else {
+                status.style.display = 'none';
+            }
+            renderPreview();
+        }
+
+        function handleFileUpload(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+            
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('manualContent').value = e.target.result;
+                handleContentInput();
+            };
+            reader.readAsText(file);
+        }
+
+        // ==================== 内容解析 ====================
+        function parseContent() {
+            var content = document.getElementById('manualContent').value.trim();
+            if (!content) {
+                parsedChapters = null;
+                return;
+            }
+
+            var chapters = [];
+            var lines = content.split('\n');
+            var currentChapter = null;
+
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                
+                // 检测标题
+                if (line.startsWith('#')) {
+                    if (currentChapter) chapters.push(currentChapter);
+                    currentChapter = {
+                        title: line.replace(/^#+\s*/, ''),
+                        content: '',
+                        alerts: [],
+                        items: []
+                    };
+                }
+                // 检测警示
+                else if (/^(DANGER|WARNING|CAUTION|NOTICE):/i.test(line)) {
+                    var match = line.match(/^(DANGER|WARNING|CAUTION|NOTICE):\s*(.*)$/i);
+                    if (currentChapter && match) {
+                        currentChapter.alerts.push({
+                            type: match[1].toLowerCase(),
+                            title: match[1].toUpperCase(),
+                            content: match[2]
+                        });
+                    }
+                }
+                // 检测列表项
+                else if (/^[-•*]\s/.test(line) || /^\d+\.\s/.test(line)) {
+                    if (currentChapter) {
+                        currentChapter.items.push(line.replace(/^[-•*]\s*|\d+\.\s*/, ''));
+                    }
+                }
+                // 普通内容
+                else if (line && currentChapter) {
+                    currentChapter.content += line + ' ';
+                }
+            }
+
+            if (currentChapter) chapters.push(currentChapter);
+            parsedChapters = chapters.length > 0 ? chapters : null;
+        }
+
+        // ==================== 颜色更新 ====================
+        function updateCustomColor() {
+            var color = document.getElementById('colorMain').value;
+            var danger = document.getElementById('colorDanger').value;
+            var warning = document.getElementById('colorWarning').value;
+            
+            document.getElementById('colorMainText').textContent = color;
+            document.getElementById('colorDangerText').textContent = danger;
+            document.getElementById('colorWarningText').textContent = warning;
+            
+            templates.custom.color = color;
+            templates.custom.danger = danger;
+            templates.custom.warning = warning;
+            
+            if (currentTemplate === 'custom') {
+                renderPreview();
+            }
+        }
+
+        // ==================== 预览渲染 ====================
+        function renderPreview() {
+            var tpl = templates[currentTemplate];
+            var color = tpl.color;
+            var danger = tpl.danger;
+            var warning = tpl.warning;
+
+            var productName = document.getElementById('docProductName').value;
+            var manualType = document.getElementById('docType').value;
+            var docNumber = document.getElementById('docNumber').value;
+            var version = document.getElementById('docVersion').value;
+            var docDate = document.getElementById('docDate').value;
+            var fontFamily = document.getElementById('fontFamily').value;
+            var fontSize = document.getElementById('fontSize').value;
+            var lineHeight = document.getElementById('lineHeight').value;
+
+            var chapters = parsedChapters || defaultChapters;
+            var html = '';
+
+            // 封面
+            html += '<div style="text-align:center;padding:40mm 20mm;border-bottom:5px solid ' + color + ';margin-bottom:25px;page-break-after:always;">';
+            html += '<div style="font-size:12pt;color:#666;margin-bottom:10px;">' + tpl.name + '</div>';
+            html += '<h1 style="font-size:24pt;color:' + color + ';margin-bottom:15px;">' + productName + '</h1>';
+            html += '<div style="font-size:16pt;font-weight:bold;margin-bottom:5px;">' + manualType + '</div>';
+            html += '<div style="font-size:10pt;color:#999;margin-top:40px;">';
+            html += 'Document: ' + docNumber + ' | Version: ' + version + '<br>';
+            html += 'Date: ' + docDate;
+            html += '</div></div>';
+
+            // 章节内容
+            for (var i = 0; i < chapters.length; i++) {
+                var chapter = chapters[i];
+                html += '<div style="margin-bottom:25px;page-break-inside:avoid;">';
+                html += '<div style="font-size:14pt;font-weight:bold;padding:8px 15px;margin-bottom:15px;border-left:4px solid ' + color + ';background:linear-gradient(90deg,#f0f9ff,transparent);">' + chapter.title + '</div>';
+                html += '<div style="padding:0 15px;line-height:' + lineHeight + ';font-family:' + fontFamily + ';font-size:' + fontSize + ';">';
+
+                // 内容
+                if (chapter.content) {
+                    html += '<p style="margin-bottom:10px;">' + chapter.content.replace(/\n/g, '<br>') + '</p>';
+                }
+
+                // 警示信息
+                if (chapter.alerts && chapter.alerts.length > 0) {
+                    for (var j = 0; j < chapter.alerts.length; j++) {
+                        var alert = chapter.alerts[j];
+                        var alertColor = alert.type === 'danger' ? danger : alert.type === 'warning' ? warning : '#3b82f6';
+                        var alertIcon = alert.type === 'danger' ? '⚠️' : alert.type === 'warning' ? '⚡' : 'ℹ️';
+                        html += '<div style="padding:12px 15px;border-radius:6px;margin:12px 0;display:flex;align-items:flex-start;gap:10px;border:2px solid ' + alertColor + ';background:' + (alert.type === 'danger' ? '#fee2e2' : alert.type === 'warning' ? '#fef3c7' : '#dbeafe') + ';">';
+                        html += '<span style="font-size:20px;">' + alertIcon + '</span>';
+                        html += '<div>';
+                        html += '<div style="font-weight:bold;color:' + (alert.type === 'danger' ? '#991b1b' : alert.type === 'warning' ? '#92400e' : '#1e40af') + ';">' + alert.title + '</div>';
+                        html += '<div style="font-size:9pt;">' + alert.content + '</div>';
+                        html += '</div></div>';
+                    }
+                }
+
+                // 表格
+                if (chapter.type === 'table' && chapter.rows) {
+                    html += '<table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:9pt;">';
+                    html += '<thead><tr>';
+                    for (var h = 0; h < chapter.headers.length; h++) {
+                        html += '<th style="border:1px solid #e2e8f0;padding:8px 10px;background:#f8fafc;font-weight:bold;">' + chapter.headers[h] + '</th>';
+                    }
+                    html += '</tr></thead><tbody>';
+                    for (var r = 0; r < chapter.rows.length; r++) {
+                        html += '<tr>';
+                        for (var c = 0; c < chapter.rows[r].length; c++) {
+                            html += '<td style="border:1px solid #e2e8f0;padding:8px 10px;">' + chapter.rows[r][c] + '</td>';
+                        }
+                        html += '</tr>';
+                    }
+                    html += '</tbody></table>';
+                }
+
+                // 列表项
+                if (chapter.items && chapter.items.length > 0) {
+                    html += '<ul style="margin:10px 0;padding-left:25px;">';
+                    for (var m = 0; m < chapter.items.length; m++) {
+                        html += '<li style="margin:5px 0;">' + chapter.items[m] + '</li>';
+                    }
+                    html += '</ul>';
+                }
+
+                html += '</div></div>';
+            }
+
+            // 页码
+            html += '<div style="position:absolute;bottom:10mm;right:15mm;font-size:8pt;color:#999;">Page 1</div>';
+
+            document.getElementById('preview').innerHTML = html;
+        }
+
+        // ==================== 导出 PDF ====================
+        function exportPDF() {
+            var element = document.getElementById('preview');
+            var productName = document.getElementById('docProductName').value;
+            var opt = {
+                margin: 10,
+                filename: productName + '_Manual.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // ==================== 导出 Word ====================
+        function exportWord() {
+            var content = document.getElementById('preview').innerHTML;
+            var productName = document.getElementById('docProductName').value;
+            
+            var htmlContent = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + productName + ' Manual</title>';
+            htmlContent += '<style>';
+            htmlContent += 'body { font-family: "Microsoft YaHei", Arial, sans-serif; padding: 20px; line-height: 1.6; }';
+            htmlContent += 'h1, h2, h3 { color: #1e3c72; }';
+            htmlContent += 'table { border-collapse: collapse; width: 100%; margin: 15px 0; }';
+            htmlContent += 'td, th { border: 1px solid #ddd; padding: 8px; }';
+            htmlContent += '</style></head><body>';
+            htmlContent += content;
+            htmlContent += '</body></html>';
+            
+            var blob = new Blob(['\ufeff' + htmlContent], { type: 'application/msword' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = productName + '_Manual.doc';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
