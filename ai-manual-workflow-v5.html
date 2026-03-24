@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI产品手册排版工具 V5</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Microsoft YaHei", Arial, sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298); min-height: 100vh; padding: 15px; }
+        .container { max-width: 1800px; margin: 0 auto; }
+
+        .header { text-align: center; margin-bottom: 15px; }
+        .header h1 { color: white; font-size: 22px; }
+        .header p { color: rgba(255,255,255,0.7); font-size: 12px; margin-top: 5px; }
+        .version-tag { background: #10b981; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; margin-left: 8px; }
+
+        .steps { display: flex; justify-content: center; margin-bottom: 15px; flex-wrap: wrap; gap: 8px; }
+        .step { display: flex; align-items: center; background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; color: rgba(255,255,255,0.6); font-size: 11px; }
+        .step-num { background: rgba(255,255,255,0.2); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 6px; font-weight: bold; }
+        .step.active { background: white; color: #1e3c72; }
+        .step.active .step-num { background: #1e3c72; color: white; }
+        .step.completed { background: #10b981; color: white; }
+        .step.completed .step-num { background: white; color: #10b981; }
+
+        .main-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 15px; }
+        .panel { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); max-height: 85vh; overflow-y: auto; }
+
+        .section-title { font-size: 14px; font-weight: bold; color: #1e3c72; margin-bottom: 12px; }
+
+        .template-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .template-card { border: 3px solid #e2e8f0; border-radius: 10px; padding: 12px; cursor: pointer; transition: all 0.2s; text-align: center; background: #fff; }
+        .template-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .template-card.selected { border-color: #10b981; background: #ecfdf5; transform: scale(1.02); }
+        .template-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; color: white; font-size: 10px; font-weight: bold; margin-bottom: 6px; }
+        .template-name { font-size: 11px; font-weight: bold; color: #333; }
+
+        .template-upload { border: 2px dashed #10b981; border-radius: 10px; padding: 15px; text-align: center; margin-top: 10px; background: #ecfdf5; cursor: pointer; }
+        .template-upload:hover { background: #d1fae5; }
+
+        .style-panel { background: #f8fafc; border-radius: 8px; padding: 12px; margin-top: 12px; }
+        .style-row { display: flex; align-items: center; margin-bottom: 8px; font-size: 11px; }
+        .style-label { width: 70px; color: #666; }
+
+        .content-input { width: 100%; min-height: 120px; padding: 10px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 12px; resize: vertical; font-family: inherit; }
+        .content-input:focus { outline: none; border-color: #1e3c72; }
+
+        .file-upload { border: 2px dashed #e2e8f0; border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 10px; cursor: pointer; transition: all 0.2s; }
+        .file-upload:hover { border-color: #1e3c72; background: #f0f9ff; }
+
+        .btn { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: bold; transition: all 0.2s; }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-primary { background: #1e3c72; color: white; }
+        .btn-primary:hover { background: #2a5298; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-success:hover { background: #059669; }
+        .btn-outline { background: transparent; border: 2px solid #1e3c72; color: #1e3c72; }
+        .btn-outline:hover { background: #1e3c72; color: white; }
+        .btn-group { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+        .btn-full { flex: 1; }
+
+        .preview-container { background: #4a5568; padding: 12px; border-radius: 10px; overflow: auto; max-height: 75vh; }
+        .preview-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .preview-title { color: white; font-weight: bold; font-size: 12px; }
+        .preview-badge { background: white; padding: 3px 10px; border-radius: 12px; font-size: 10px; font-weight: bold; color: #1e3c72; }
+        .preview-page { background: white; padding: 15mm; min-height: 240mm; box-shadow: 0 4px 15px rgba(0,0,0,0.4); font-size: 10pt; line-height: 1.6; }
+
+        .status { padding: 8px 12px; border-radius: 6px; margin-top: 8px; font-size: 11px; display: flex; align-items: center; gap: 8px; }
+        .status-info { background: #dbeafe; color: #1e40af; }
+        .status-success { background: #d1fae5; color: #065f46; }
+        .status-warning { background: #fef3c7; color: #92400e; }
+        .status-error { background: #fee2e2; color: #991b1b; }
+
+        .lang-switch { display: flex; gap: 5px; margin-bottom: 10px; }
+        .lang-btn { padding: 6px 12px; border: 2px solid #ddd; border-radius: 6px; background: white; cursor: pointer; font-size: 11px; transition: all 0.2s; }
+        .lang-btn:hover { border-color: #1e3c72; }
+        .lang-btn.active { background: #1e3c72; color: white; border-color: #1e3c72; }
+
+        .file-list { margin-top: 10px; }
+        .file-item { background: #f0f9ff; padding: 8px 12px; border-radius: 6px; margin-bottom: 6px; font-size: 11px; display: flex; justify-content: space-between; align-items: center; }
+        .file-item .file-name { font-weight: bold; color: #1e3c72; }
+        .file-item .file-size { color: #666; }
+
+        .parsed-styles { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px; padding: 12px; margin-top: 10px; }
+        .parsed-title { font-weight: bold; color: #166534; font-size: 12px; margin-bottom: 8px; }
+        .parsed-item { display: flex; align-items: center; margin: 4px 0; font-size: 11px; }
+        .parsed-item span:first-child { color: #666; width: 60px; }
+
+        /* 手册预览样式 */
+        .manual-cover { text-align: center; padding: 40px 20px; border-bottom: 4px solid #0066cc; margin-bottom: 30px; }
+        .manual-cover h1 { font-size: 28px; color: #1e3c72; margin-bottom: 10px; }
+        .manual-cover .subtitle { font-size: 14px; color: #666; }
+        .manual-cover .version { font-size: 12px; color: #999; margin-top: 20px; }
+
+        .manual-chapter { margin-bottom: 25px; page-break-inside: avoid; }
+        .chapter-title { font-size: 18px; font-weight: bold; color: #1e3c72; padding: 10px 15px; background: linear-gradient(90deg, #f0f9ff, transparent); border-left: 4px solid #0066cc; margin-bottom: 15px; }
+        .chapter-content { padding: 0 15px; font-size: 11pt; line-height: 1.8; }
+
+        .alert-box { padding: 15px; border-radius: 8px; margin: 15px 0; display: flex; align-items: flex-start; gap: 12px; }
+        .alert-icon { font-size: 24px; flex-shrink: 0; }
+        .alert-content { flex: 1; }
+        .alert-title { font-weight: bold; font-size: 12pt; margin-bottom: 5px; }
+        .alert-text { font-size: 10pt; }
+        .alert-danger { background: #fee2e2; border: 2px solid #dc3545; }
+        .alert-danger .alert-title { color: #991b1b; }
+        .alert-warning { background: #fef3c7; border: 2px solid #f59e0b; }
+        .alert-warning .alert-title { color: #92400e; }
+        .alert-caution { background: #dbeafe; border: 2px solid #3b82f6; }
+        .alert-caution .alert-title { color: #1e40af; }
+        .alert-notice { background: #f0fdf4; border: 2px solid #22c55e; }
+        .alert-notice .alert-title { color: #166534; }
+
+        .spec-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10pt; }
+        .spec-table th, .spec-table td { border: 1px solid #e2e8f0; padding: 10px 12px; text-align: left; }
+        .spec-table th { background: #f8fafc; font-weight: bold; color: #1e3c72; }
+        .spec-table tr:nth-child(even) { background: #f8fafc; }
+
+        .step-list { counter-reset: step; }
+        .step-item { counter-increment: step; padding: 10px 15px 10px 45px; position: relative; margin-bottom: 8px; background: #f8fafc; border-radius: 6px; }
+        .step-item::before { content: counter(step); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; background: #1e3c72; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 11px; }
+
+        .tip-box { background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 15px; margin: 15px 0; border-radius: 0 6px 6px 0; }
+        .tip-box .tip-title { font-weight: bold; color: #1e40af; margin-bottom: 5px; }
+
+        .loading-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #fff; border-radius: 50%; border-top-color: transparent; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        @media (max-width: 900px) { 
+            .main-grid { grid-template-columns: 1fr; }
+            .template-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media print {
+            .preview-page { padding: 0; box-shadow: none; }
+            .manual-chapter { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI产品手册排版工具 <span class="version-tag">V5</span></h1>
+            <p>选择模板 → 导入内容 → AI解析排版 → 预览导出</p>
+        </div>
+
+        <div class="steps">
+            <div class="step active" id="step1"><span class="step-num">1</span><span id="step1Text">选择模板</span></div>
+            <div class="step" id="step2"><span class="step-num">2</span><span id="step2Text">导入内容</span></div>
+            <div class="step" id="step3"><span class="step-num">3</span><span id="step3Text">AI解析</span></div>
+            <div class="step" id="step4"><span class="step-num">4</span><span id="step4Text">预览导出</span></div>
+        </div>
+
+        <div class="main-grid">
+            <div class="panel">
+                <!-- 步骤1: 选择模板 -->
+                <div id="panel1">
+                    <div class="section-title">🎨 <span id="title1">步骤1: 选择手册模板</span></div>
+
+                    <div class="lang-switch">
+                        <button class="lang-btn active" id="langZh" onclick="setLang('zh')">中文</button>
+                        <button class="lang-btn" id="langEn" onclick="setLang('en')">English</button>
+                    </div>
+
+                    <div style="font-size:11px;color:#666;margin-bottom:8px;" id="presetLabel">预设模板:</div>
+                    <div class="template-grid">
+                        <div class="template-card selected" id="tpl-schneider" onclick="selectTemplate('schneider')">
+                            <div class="template-badge" style="background:#0066cc;">Schneider</div>
+                            <div class="template-name">EVlink Pro DC</div>
+                        </div>
+                        <div class="template-card" id="tpl-siemens" onclick="selectTemplate('siemens')">
+                            <div class="template-badge" style="background:#009999;">Siemens</div>
+                            <div class="template-name">Siemens</div>
+                        </div>
+                        <div class="template-card" id="tpl-abb" onclick="selectTemplate('abb')">
+                            <div class="template-badge" style="background:#ff6600;">ABB</div>
+                            <div class="template-name">ABB Terra</div>
+                        </div>
+                        <div class="template-card" id="tpl-chuneng" onclick="selectTemplate('chuneng')">
+                            <div class="template-badge" style="background:#8b5cf6;">储能</div>
+                            <div class="template-name">储能手册</div>
+                        </div>
+                        <div class="template-card" id="tpl-xingmai" onclick="selectTemplate('xingmai')">
+                            <div class="template-badge" style="background:#06b6d4;">星迈</div>
+                            <div class="template-name">交流模板</div>
+                        </div>
+                        <div class="template-card" id="tpl-custom" onclick="selectTemplate('custom')">
+                            <div class="template-badge" style="background:#6366f1;">自定义</div>
+                            <div class="template-name">空白模板</div>
+                        </div>
+                    </div>
+
+                    <div style="font-size:11px;color:#666;margin:15px 0 8px 0;" id="uploadLabel">上传模板:</div>
+                    <div class="template-upload" onclick="document.getElementById('templateInput').click()">
+                        <div style="font-size:20px;">📤</div>
+                        <div style="font-size:12px;color:#10b981;font-weight:bold;" id="uploadTip">点击上传Word模板文件</div>
+                        <div style="font-size:10px;color:#666;">自动解析样式并应用到预览</div>
+                        <input type="file" id="templateInput" style="display:none;" accept=".docx,.doc" onchange="handleTemplateUpload(event)">
+                    </div>
+
+                    <!-- 解析后的样式显示 -->
+                    <div id="parsedStyles" class="parsed-styles" style="display:none;">
+                        <div class="parsed-title">✅ <span id="parsedTitleText">模板样式已解析</span></div>
+                        <div class="parsed-item"><span>主色调:</span> <span id="parsedMainColor">#0066cc</span> <input type="color" id="colorMain" value="#0066cc" onchange="updateTemplateColor()" style="width:20px;height:14px;margin-left:8px;"></div>
+                        <div class="parsed-item"><span>警示色:</span> <span id="parsedDangerColor">#dc3545</span> <input type="color" id="colorDanger" value="#dc3545" onchange="updateTemplateColor()" style="width:20px;height:14px;margin-left:8px;"></div>
+                        <div class="parsed-item"><span>警告色:</span> <span id="parsedWarningColor">#ffc107</span> <input type="color" id="colorWarning" value="#ffc107" onchange="updateTemplateColor()" style="width:20px;height:14px;margin-left:8px;"></div>
+                        <div class="parsed-item"><span>字体:</span> <span id="parsedFont">Arial</span></div>
+                    </div>
+
+                    <div class="style-panel">
+                        <div class="section-title" style="font-size:12px;margin-bottom:8px;">⚙️ <span id="styleTitle">风格设置</span></div>
+                        <div class="style-row"><span class="style-label"><span id="colorLabel">主色调:</span></span><input type="color" id="colorMainManual" value="#0066cc" onchange="updateManualColor()" style="width:30px;height:20px;"></div>
+                        <div class="style-row"><span class="style-label"><span id="dangerLabel">警示色:</span></span><input type="color" id="colorDangerManual" value="#dc3545" onchange="updateManualColor()" style="width:30px;height:20px;"></div>
+                        <div class="style-row"><span class="style-label"><span id="warningLabel">警告色:</span></span><input type="color" id="colorWarningManual" value="#ffc107" onchange="updateManualColor()" style="width:30px;height:20px;"></div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-full" onclick="goToStep(2)" id="nextBtn1">下一步 → 导入内容</button>
+                    </div>
+                </div>
+
+                <!-- 步骤2: 导入内容 -->
+                <div id="panel2" style="display:none;">
+                    <div class="section-title">📥 <span id="title2">步骤2: 导入手册内容</span></div>
+
+                    <div class="file-upload" onclick="document.getElementById('fileInput').click()">
+                        <div style="font-size:16px;">📁</div>
+                        <div style="font-size:11px;color:#666;" id="contentUploadTip">点击上传手册内容 (Word/文本)</div>
+                        <input type="file" id="fileInput" style="display:none;" accept=".docx,.doc,.md,.txt" onchange="handleFileUpload(event)">
+                    </div>
+
+                    <textarea class="content-input" id="manualContent" placeholder="或粘贴手册内容...
+
+# 安全信息
+DANGER: 电击危险
+WARNING: 注意安全
+
+# 产品简介
+本产品是一款高效可靠的充电设备...
+
+# 技术规格
+- 输入电压: 380V AC
+- 输出功率: 180kW
+- 效率: ≥95%"></textarea>
+
+                    <div id="contentStatus"></div>
+                    <div id="fileList" class="file-list"></div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="goToStep(1)" id="prevBtn2">← 上一步</button>
+                        <button class="btn btn-success btn-full" onclick="importAndParse()" id="parseBtn">🤖 AI智能解析 →</button>
+                    </div>
+                </div>
+
+                <!-- 步骤3: AI解析 -->
+                <div id="panel3" style="display:none;">
+                    <div class="section-title">🤖 <span id="title3">步骤3: AI解析结果</span></div>
+
+                    <div id="parseStatus" class="status status-info">
+                        <span>⏳</span>
+                        <span id="parsingText">等待解析...</span>
+                    </div>
+                    
+                    <div id="parseResult" style="margin-top:15px;"></div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="goToStep(2)" id="prevBtn3">← 上一步</button>
+                        <button class="btn btn-success btn-full" onclick="goToStep(4)" id="previewBtn">查看预览 →</button>
+                    </div>
+                </div>
+
+                <!-- 步骤4: 预览导出 -->
+                <div id="panel4" style="display:none;">
+                    <div class="section-title">📄 <span id="title4">步骤4: 预览与导出</span></div>
+
+                    <div style="background:#f0f9ff;padding:10px;border-radius:8px;margin-bottom:12px;font-size:11px;">
+                        <div><strong><span id="templateLabel">模板:</span></strong> <span id="summaryTemplate">Schneider</span></div>
+                        <div><strong><span id="chapterLabel">章节:</span></strong> <span id="summaryChapters">0</span> <span id="chapterUnit">个</span></div>
+                        <div><strong>状态:</strong> <span id="summaryStatus">已排版</span></div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="exportPDF()">📥 <span id="pdfBtn">导出PDF</span></button>
+                        <button class="btn btn-primary" onclick="exportWord()">📝 <span id="wordBtn">导出Word</span></button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="goToStep(3)" id="prevBtn4">← 上一步</button>
+                        <button class="btn btn-outline" onclick="resetTool()">🔄 <span id="restartBtn">重新开始</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 预览面板 -->
+            <div class="panel">
+                <div class="preview-header">
+                    <span class="preview-title">👁️ <span id="previewLabel">实时预览</span></span>
+                    <span class="preview-badge" id="currentTemplateBadge">Schneider</span>
+                </div>
+                <div class="preview-container">
+                    <div class="preview-page" id="preview">
+                        <div style="text-align:center;color:#999;padding:50px;">
+                            <div style="font-size:48px;margin-bottom:20px;">📋</div>
+                            <div>选择模板并导入内容后</div>
+                            <div>预览将在此显示</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== 全局状态 ====================
+        var currentStep = 1;
+        var currentTemplate = 'schneider';
+        var currentLang = 'zh';
+        var parsedData = null;
+        var uploadedFileName = '';
+        
+        var templateStyles = {
+            color: '#0066cc',
+            danger: '#dc3545',
+            warning: '#ffc107',
+            fontFamily: 'Arial'
+        };
+
+        // ==================== 语言配置 ====================
+        var langData = {
+            zh: { 
+                step1: '选择模板', step2: '导入内容', step3: 'AI解析', step4: '预览导出',
+                title1: '步骤1: 选择手册模板', title2: '步骤2: 导入手册内容',
+                title3: '步骤3: AI解析结果', title4: '步骤4: 预览与导出',
+                styleTitle: '风格设置', colorLabel: '主色调:', dangerLabel: '警示色:', warningLabel: '警告色:',
+                nextBtn1: '下一步 → 导入内容', prevBtn2: '← 上一步', prevBtn3: '← 上一步', prevBtn4: '← 上一步',
+                parseBtn: '🤖 AI智能解析 →', previewBtn: '查看预览 →',
+                presetLabel: '预设模板:', uploadLabel: '上传模板:', uploadTip: '点击上传Word模板文件',
+                contentUploadTip: '点击上传手册内容 (Word/文本)', parsingText: '正在解析...',
+                templateLabel: '模板:', chapterLabel: '章节:', chapterUnit: '个',
+                pdfBtn: '导出PDF', wordBtn: '导出Word', restartBtn: '重新开始',
+                previewLabel: '实时预览', parseComplete: '解析完成！',
+                chapters: '个章节', contentLoaded: '已加载', templateLoaded: '模板已加载',
+                parsedTitleText: '模板样式已解析'
+            },
+            en: { 
+                step1: 'Select Template', step2: 'Import Content', step3: 'AI Parse', step4: 'Preview Export',
+                title1: 'Step 1: Select Template', title2: 'Step 2: Import Content',
+                title3: 'Step 3: AI Parse Result', title4: 'Step 4: Preview & Export',
+                styleTitle: 'Style Settings', colorLabel: 'Main Color:', dangerLabel: 'Danger:', warningLabel: 'Warning:',
+                nextBtn1: 'Next → Import', prevBtn2: '← Previous', prevBtn3: '← Previous', prevBtn4: '← Previous',
+                parseBtn: '🤖 AI Parse →', previewBtn: 'View Preview →',
+                presetLabel: 'Preset Templates:', uploadLabel: 'Upload Template:', uploadTip: 'Click to upload Word template',
+                contentUploadTip: 'Click to upload content (Word/Text)', parsingText: 'Parsing...',
+                templateLabel: 'Template:', chapterLabel: 'Chapters:', chapterUnit: '',
+                pdfBtn: 'Export PDF', wordBtn: 'Export Word', restartBtn: 'Restart',
+                previewLabel: 'Live Preview', parseComplete: 'Parse Complete!',
+                chapters: 'chapters', contentLoaded: 'Loaded', templateLoaded: 'Template Loaded',
+                parsedTitleText: 'Template Styles Parsed'
+            }
+        };
+
+        // ==================== 模板配置 ====================
+        var templates = {
+            schneider: { name: 'Schneider', color: '#0066cc', danger: '#dc3545', warning: '#ffc107', fontFamily: 'Arial' },
+            siemens: { name: 'Siemens', color: '#009999', danger: '#cc0000', warning: '#ff9900', fontFamily: 'Arial' },
+            abb: { name: 'ABB', color: '#ff6600', danger: '#ff0000', warning: '#ff9900', fontFamily: 'Times New Roman' },
+            chuneng: { name: '储能', color: '#8b5cf6', danger: '#7c3aed', warning: '#f59e0b', fontFamily: 'Arial' },
+            xingmai: { name: '星迈', color: '#06b6d4', danger: '#0891b2', warning: '#f59e0b', fontFamily: 'Arial' },
+            custom: { name: '自定义', color: '#6366f1', danger: '#dc3545', warning: '#ffc107', fontFamily: 'Arial' },
+            uploaded: { name: '上传模板', color: '#6366f1', danger: '#dc3545', warning: '#ffc107', fontFamily: 'Arial' }
+        };
+
+        // ==================== 默认章节示例 ====================
+        var defaultChapters = [
+            { 
+                title: '安全信息', 
+                content: '请仔细阅读以下安全说明，确保安全使用本产品。',
+                alerts: [
+                    { type: 'danger', title: 'DANGER', content: '电击危险！在进行任何维护操作前，必须切断电源。' },
+                    { type: 'warning', title: 'WARNING', content: '高温表面！设备运行时某些部件可能变热，请勿触摸。' }
+                ]
+            },
+            { 
+                title: '产品简介', 
+                content: '本产品是一款高效可靠的直流充电桩，采用先进的功率转换技术，具有高效率、高可靠性、智能化管理等特点。适用于商业充电站、停车场等场景。'
+            },
+            { 
+                title: '技术规格', 
+                table: [
+                    { param: '输入电压', value: '380V AC ±10%' },
+                    { param: '输出功率', value: '180kW' },
+                    { param: '输出电压', value: '200-1000V DC' },
+                    { param: '最大电流', value: '250A' },
+                    { param: '效率', value: '≥95%' },
+                    { param: '工作温度', value: '-30°C ~ +55°C' }
+                ]
+            },
+            { 
+                title: '安装准备', 
+                steps: [
+                    '检查包装完整性，确认所有配件齐全',
+                    '准备安装工具：扳手、螺丝刀、万用表等',
+                    '确认安装位置符合要求，预留足够空间',
+                    '检查电源线路，确保电压和容量满足要求'
+                ]
+            },
+            { 
+                title: '操作说明', 
+                content: '按照以下步骤完成设备操作：',
+                steps: [
+                    '接通电源，观察指示灯状态',
+                    '确认设备自检完成，显示屏正常',
+                    '连接充电枪到车辆充电口',
+                    '通过扫码或刷卡启动充电',
+                    '充电完成后，先断开车辆端，再归位充电枪'
+                ],
+                tips: [
+                    { title: '提示', content: '建议在充电前检查车辆充电口是否干燥清洁。' }
+                ]
+            }
+        ];
+
+        // ==================== 初始化 ====================
+        window.onload = function() {
+            renderPreview();
+            updateUI();
+        };
+
+        // ==================== 语言切换 ====================
+        function setLang(lang) {
+            currentLang = lang;
+            document.getElementById('langZh').className = 'lang-btn' + (lang === 'zh' ? ' active' : '');
+            document.getElementById('langEn').className = 'lang-btn' + (lang === 'en' ? ' active' : '');
+            updateUI();
+        }
+
+        function updateUI() {
+            var t = langData[currentLang];
+            var textMap = {
+                'step1Text': 'step1', 'step2Text': 'step2', 'step3Text': 'step3', 'step4Text': 'step4',
+                'title1': 'title1', 'title2': 'title2', 'title3': 'title3', 'title4': 'title4',
+                'styleTitle': 'styleTitle', 'colorLabel': 'colorLabel', 'dangerLabel': 'dangerLabel',
+                'warningLabel': 'warningLabel', 'nextBtn1': 'nextBtn1', 'prevBtn2': 'prevBtn2',
+                'prevBtn3': 'prevBtn3', 'prevBtn4': 'prevBtn4', 'parseBtn': 'parseBtn',
+                'previewBtn': 'previewBtn', 'presetLabel': 'presetLabel', 'uploadLabel': 'uploadLabel',
+                'uploadTip': 'uploadTip', 'contentUploadTip': 'contentUploadTip', 'parsingText': 'parsingText',
+                'templateLabel': 'templateLabel', 'chapterLabel': 'chapterLabel', 'chapterUnit': 'chapterUnit',
+                'pdfBtn': 'pdfBtn', 'wordBtn': 'wordBtn', 'restartBtn': 'restartBtn',
+                'previewLabel': 'previewLabel', 'parsedTitleText': 'parsedTitleText'
+            };
+            
+            for (var id in textMap) {
+                var el = document.getElementById(id);
+                if (el) el.textContent = t[textMap[id]];
+            }
+        }
+
+        // ==================== 模板选择 ====================
+        function selectTemplate(templateId) {
+            currentTemplate = templateId;
+            var tpl = templates[templateId];
+            
+            // 更新UI
+            document.querySelectorAll('.template-card').forEach(function(card) {
+                card.classList.remove('selected');
+            });
+            document.getElementById('tpl-' + templateId).classList.add('selected');
+            
+            // 更新样式
+            templateStyles.color = tpl.color;
+            templateStyles.danger = tpl.danger;
+            templateStyles.warning = tpl.warning;
+            templateStyles.fontFamily = tpl.fontFamily;
+            
+            // 更新颜色选择器
+            document.getElementById('colorMainManual').value = tpl.color;
+            document.getElementById('colorDangerManual').value = tpl.danger;
+            document.getElementById('colorWarningManual').value = tpl.warning;
+            
+            // 更新预览徽章
+            document.getElementById('currentTemplateBadge').textContent = tpl.name;
+            
+            renderPreview();
+        }
+
+        // ==================== 颜色更新 ====================
+        function updateManualColor() {
+            templateStyles.color = document.getElementById('colorMainManual').value;
+            templateStyles.danger = document.getElementById('colorDangerManual').value;
+            templateStyles.warning = document.getElementById('colorWarningManual').value;
+            renderPreview();
+        }
+
+        function updateTemplateColor() {
+            templateStyles.color = document.getElementById('colorMain').value;
+            templateStyles.danger = document.getElementById('colorDanger').value;
+            templateStyles.warning = document.getElementById('colorWarning').value;
+            
+            document.getElementById('parsedMainColor').textContent = templateStyles.color;
+            document.getElementById('parsedDangerColor').textContent = templateStyles.danger;
+            document.getElementById('parsedWarningColor').textContent = templateStyles.warning;
+            
+            renderPreview();
+        }
+
+        // ==================== 步骤切换 ====================
+        function goToStep(step) {
+            currentStep = step;
+            
+            // 隐藏所有面板
+            for (var i = 1; i <= 4; i++) {
+                document.getElementById('panel' + i).style.display = 'none';
+                var stepEl = document.getElementById('step' + i);
+                stepEl.classList.remove('active', 'completed');
+                if (i < step) stepEl.classList.add('completed');
+            }
+            
+            // 显示当前面板
+            document.getElementById('panel' + step).style.display = 'block';
+            document.getElementById('step' + step).classList.add('active');
+            
+            // 步骤4时更新摘要
+            if (step === 4 && parsedData) {
+                document.getElementById('summaryTemplate').textContent = templates[currentTemplate].name;
+                document.getElementById('summaryChapters').textContent = parsedData.chapters ? parsedData.chapters.length : 0;
+            }
+        }
+
+        // ==================== 模板上传处理 ====================
+        function handleTemplateUpload(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+            
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var arrayBuffer = e.target.result;
+                
+                // 使用 mammoth 解析 Word 文档
+                mammoth.extractRawText({ arrayBuffer: arrayBuffer }).then(function(result) {
+                    console.log('模板解析成功:', result.value);
+                    
+                    // 显示解析结果
+                    document.getElementById('parsedStyles').style.display = 'block';
+                    currentTemplate = 'uploaded';
+                    document.getElementById('currentTemplateBadge').textContent = '上传模板';
+                    
+                    // 分析文本提取颜色（简单示例）
+                    var text = result.value.toLowerCase();
+                    if (text.includes('schneider') || text.includes('施耐德')) {
+                        templateStyles.color = '#0066cc';
+                    } else if (text.includes('siemens') || text.includes('西门子')) {
+                        templateStyles.color = '#009999';
+                    } else if (text.includes('abb')) {
+                        templateStyles.color = '#ff6600';
+                    }
+                    
+                    document.getElementById('colorMain').value = templateStyles.color;
+                    document.getElementById('parsedMainColor').textContent = templateStyles.color;
+                    
+                    renderPreview();
+                }).catch(function(err) {
+                    console.error('模板解析失败:', err);
+                    alert('模板解析失败，请确保上传的是有效的Word文档');
+                });
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        // ==================== 文件上传处理 ====================
+        function handleFileUpload(event) {
+            var file = event.target.files[0];
+            if (!file) return;
+            
+            uploadedFileName = file.name;
+            
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var content = e.target.result;
+                
+                if (file.name.endsWith('.docx') || file.name.endsWith('.doc')) {
+                    // Word 文件需要用 mammoth 解析
+                    var arrayBuffer = e.target.result;
+                    mammoth.extractRawText({ arrayBuffer: arrayBuffer }).then(function(result) {
+                        document.getElementById('manualContent').value = result.value;
+                        showFileStatus(file.name, file.size);
+                    });
+                } else {
+                    // 文本文件直接显示
+                    document.getElementById('manualContent').value = content;
+                    showFileStatus(file.name, file.size);
+                }
+            };
+            
+            if (file.name.endsWith('.docx') || file.name.endsWith('.doc')) {
+                reader.readAsArrayBuffer(file);
+            } else {
+                reader.readAsText(file);
+            }
+        }
+
+        function showFileStatus(name, size) {
+            var sizeStr = size < 1024 ? size + ' B' : (size / 1024).toFixed(1) + ' KB';
+            document.getElementById('fileList').innerHTML = 
+                '<div class="file-item"><span class="file-name">' + name + '</span><span class="file-size">' + sizeStr + '</span></div>';
+            document.getElementById('contentStatus').innerHTML = 
+                '<div class="status status-success">✅ 文件已加载</div>';
+        }
+
+        // ==================== AI 解析 ====================
+        function importAndParse() {
+            var content = document.getElementById('manualContent').value.trim();
+            
+            if (!content) {
+                alert('请先输入或上传手册内容');
+                return;
+            }
+            
+            goToStep(3);
+            
+            // 显示解析中状态
+            var statusEl = document.getElementById('parseStatus');
+            statusEl.className = 'status status-info';
+            statusEl.innerHTML = '<span class="loading-spinner"></span><span>正在解析内容...</span>';
+            
+            // 模拟 AI 解析（实际项目中可接入 AI API）
+            setTimeout(function() {
+                parsedData = parseContent(content);
+                
+                // 显示解析结果
+                statusEl.className = 'status status-success';
+                statusEl.innerHTML = '<span>✅</span><span>解析完成！</span>';
+                
+                var resultHtml = '<div style="background:#f0fdf4;padding:12px;border-radius:8px;margin-top:10px;">';
+                resultHtml += '<div style="font-weight:bold;color:#166534;margin-bottom:8px;">📊 解析结果</div>';
+                resultHtml += '<div>• 识别章节: <strong>' + parsedData.chapters.length + '</strong> 个</div>';
+                resultHtml += '<div>• 安全警示: <strong>' + parsedData.alertCount + '</strong> 条</div>';
+                resultHtml += '<div>• 技术参数: <strong>' + parsedData.paramCount + '</strong> 项</div>';
+                resultHtml += '</div>';
+                
+                document.getElementById('parseResult').innerHTML = resultHtml;
+                
+                renderPreview();
+            }, 1500);
+        }
+
+        // ==================== 内容解析 ====================
+        function parseContent(content) {
+            var chapters = [];
+            var alertCount = 0;
+            var paramCount = 0;
+            
+            // 按标题分割
+            var lines = content.split('\n');
+            var currentChapter = null;
+            
+            for (var i = 0; i < lines.length; i++) {
+                var line = lines[i].trim();
+                
+                // 检测标题 (以 # 开头)
+                if (line.startsWith('#')) {
+                    if (currentChapter) chapters.push(currentChapter);
+                    currentChapter = {
+                        title: line.replace(/^#+\s*/, ''),
+                        content: '',
+                        alerts: [],
+                        steps: [],
+                        table: []
+                    };
+                }
+                // 检测警示信息
+                else if (line.toUpperCase().startsWith('DANGER:') || 
+                         line.toUpperCase().startsWith('WARNING:') ||
+                         line.toUpperCase().startsWith('CAUTION:') ||
+                         line.toUpperCase().startsWith('NOTICE:')) {
+                    var parts = line.split(':');
+                    var type = parts[0].toLowerCase();
+                    var text = parts.slice(1).join(':').trim();
+                    if (currentChapter) {
+                        currentChapter.alerts.push({ type: type, title: parts[0].toUpperCase(), content: text });
+                    }
+                    alertCount++;
+                }
+                // 检测步骤 (以数字或 - 开头)
+                else if (/^[\d]+\./.test(line) || line.startsWith('-')) {
+                    if (currentChapter) {
+                        currentChapter.steps.push(line.replace(/^[\d]+\.\s*|-\s*/, ''));
+                    }
+                }
+                // 检测参数 (包含冒号的键值对)
+                else if (line.includes(':') && !line.startsWith('http')) {
+                    var kv = line.split(':');
+                    if (kv.length === 2 && kv[0].length < 20) {
+                        if (currentChapter) {
+                            currentChapter.table.push({ param: kv[0].trim(), value: kv[1].trim() });
+                        }
+                        paramCount++;
+                    } else if (currentChapter) {
+                        currentChapter.content += line + ' ';
+                    }
+                }
+                // 普通内容
+                else if (line && currentChapter) {
+                    currentChapter.content += line + ' ';
+                }
+            }
+            
+            if (currentChapter) chapters.push(currentChapter);
+            
+            // 如果没有解析出章节，使用默认结构
+            if (chapters.length === 0) {
+                chapters = [{
+                    title: '手册内容',
+                    content: content
+                }];
+            }
+            
+            return {
+                chapters: chapters,
+                alertCount: alertCount,
+                paramCount: paramCount
+            };
+        }
+
+        // ==================== 预览渲染 ====================
+        function renderPreview() {
+            var previewEl = document.getElementById('preview');
+            var tpl = templates[currentTemplate];
+            
+            var html = '';
+            
+            // 封面
+            html += '<div class="manual-cover" style="border-bottom-color:' + templateStyles.color + '">';
+            html += '<h1 style="color:' + templateStyles.color + '">产品手册</h1>';
+            html += '<div class="subtitle">' + tpl.name + ' 系列</div>';
+            html += '<div class="version">版本: V1.0 | ' + new Date().toLocaleDateString() + '</div>';
+            html += '</div>';
+            
+            // 章节内容
+            var chapters = parsedData ? parsedData.chapters : defaultChapters;
+            
+            for (var i = 0; i < chapters.length; i++) {
+                var chapter = chapters[i];
+                html += '<div class="manual-chapter">';
+                html += '<div class="chapter-title" style="border-left-color:' + templateStyles.color + '">' + chapter.title + '</div>';
+                html += '<div class="chapter-content">';
+                
+                // 内容文本
+                if (chapter.content) {
+                    html += '<p>' + chapter.content + '</p>';
+                }
+                
+                // 警示信息
+                if (chapter.alerts && chapter.alerts.length > 0) {
+                    for (var j = 0; j < chapter.alerts.length; j++) {
+                        var alert = chapter.alerts[j];
+                        var alertColor = alert.type === 'danger' ? templateStyles.danger : 
+                                        alert.type === 'warning' ? templateStyles.warning : '#3b82f6';
+                        var alertIcon = alert.type === 'danger' ? '⚠️' : 
+                                       alert.type === 'warning' ? '⚡' : 'ℹ️';
+                        html += '<div class="alert-box alert-' + alert.type + '" style="border-color:' + alertColor + '">';
+                        html += '<div class="alert-icon">' + alertIcon + '</div>';
+                        html += '<div class="alert-content">';
+                        html += '<div class="alert-title">' + alert.title + '</div>';
+                        html += '<div class="alert-text">' + alert.content + '</div>';
+                        html += '</div></div>';
+                    }
+                }
+                
+                // 规格表格
+                if (chapter.table && chapter.table.length > 0) {
+                    html += '<table class="spec-table"><thead><tr><th>参数</th><th>数值</th></tr></thead><tbody>';
+                    for (var k = 0; k < chapter.table.length; k++) {
+                        html += '<tr><td>' + chapter.table[k].param + '</td><td>' + chapter.table[k].value + '</td></tr>';
+                    }
+                    html += '</tbody></table>';
+                }
+                
+                // 步骤列表
+                if (chapter.steps && chapter.steps.length > 0) {
+                    html += '<div class="step-list">';
+                    for (var m = 0; m < chapter.steps.length; m++) {
+                        html += '<div class="step-item">' + chapter.steps[m] + '</div>';
+                    }
+                    html += '</div>';
+                }
+                
+                html += '</div></div>';
+            }
+            
+            previewEl.innerHTML = html;
+        }
+
+        // ==================== 导出 PDF ====================
+        function exportPDF() {
+            var element = document.getElementById('preview');
+            var opt = {
+                margin: 10,
+                filename: '产品手册_' + templates[currentTemplate].name + '.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // ==================== 导出 Word ====================
+        function exportWord() {
+            var content = document.getElementById('preview').innerHTML;
+            
+            // 创建简单的 HTML 文档
+            var htmlContent = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>产品手册</title>';
+            htmlContent += '<style>';
+            htmlContent += 'body { font-family: "Microsoft YaHei", Arial, sans-serif; padding: 20px; }';
+            htmlContent += 'h1 { color: ' + templateStyles.color + '; }';
+            htmlContent += '.chapter-title { font-size: 16px; font-weight: bold; margin: 20px 0 10px 0; }';
+            htmlContent += '.alert-box { padding: 10px; margin: 10px 0; border-radius: 5px; }';
+            htmlContent += '.alert-danger { background: #fee2e2; }';
+            htmlContent += '.alert-warning { background: #fef3c7; }';
+            htmlContent += 'table { border-collapse: collapse; width: 100%; margin: 10px 0; }';
+            htmlContent += 'td, th { border: 1px solid #ddd; padding: 8px; }';
+            htmlContent += '</style></head><body>';
+            htmlContent += content;
+            htmlContent += '</body></html>';
+            
+            // 创建 Blob 并下载
+            var blob = new Blob(['\ufeff' + htmlContent], { type: 'application/msword' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = '产品手册_' + templates[currentTemplate].name + '.doc';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // ==================== 重置工具 ====================
+        function resetTool() {
+            currentStep = 1;
+            currentTemplate = 'schneider';
+            parsedData = null;
+            uploadedFileName = '';
+            
+            document.getElementById('manualContent').value = '';
+            document.getElementById('fileList').innerHTML = '';
+            document.getElementById('contentStatus').innerHTML = '';
+            document.getElementById('parseResult').innerHTML = '';
+            document.getElementById('parsedStyles').style.display = 'none';
+            
+            selectTemplate('schneider');
+            goToStep(1);
+        }
+    </script>
+</body>
+</html>
