@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u572" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>The DC wallbox is a bidirectional charging station for Indoor and outdoor applications for charging/discharging for electric or plug-in hybrid vehicles. Do not connect any other devices to it, e.g. electric tools. The DC wallbox is designed for installation on a wall or column. You must comply with the relevant national regulations for installing and connecting the DC wallbox.</Content>
+				<Br />
+				<Content>The DC wallbox was developed, manufactured, tested and documented on the basis of the relevant safety standards. To avoid any danger in terms of property damage or to personal safety, comply with the instructions and safety information described in the manual.</Content>
+				<Br />
+				<Content>The instructions in this manual must be followed to the letter in order to eliminate sources of danger. Otherwise the danger may be created or safety equipment may be rendered inoperable. In addition to the safety information provided in this manual, the safety and accident prevention regulations relating to the specific DC wallbox must be followed.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
