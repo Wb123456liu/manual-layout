@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u8552" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Table Self="u8552i8567" HeaderRowCount="1" FooterRowCount="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" BodyRowCount="1" ColumnCount="2" AppliedTableStyle="TableStyle/表头灰" TableDirection="LeftToRightDirection">
+					<Row Self="u8552i8567Row0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="13.214566929126702" MinimumHeight="13.214566929126702" />
+					<Row Self="u8552i8567Row1" Name="1" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="132.6692913385827" MinimumHeight="69.05635099921619" />
+					<Column Self="u8552i8567Column0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="137.7972440944882" />
+					<Column Self="u8552i8567Column1" Name="1" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="200.72637795275568" />
+					<Cell Self="u8552i8567i0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="8">
+								<Content>Illustration</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u8552i8567i1" Name="1:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="8">
+								<Content>Instructions</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u8552i8567i4" Name="0:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Br />
+								<Br />
+								<Br />
+								<Br />
+								<Br />
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Br />
+								<Br />
+								<Br />
+								<Br />
+								<Br />
+								<Br />
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>For pin number reference, refer to Chapter 7.2.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u8552i8567i5" Name="1:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" LeftIndent="8.503937007874017" FirstLineIndent="-8.503937007874017" Justification="LeftAlign" BulletsAndNumberingListType="BulletList">
+							<Properties>
+								<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+								<NumberingFormat type="string">a, b, c, d...</NumberingFormat>
+								<BulletsFont type="string">Arial</BulletsFont>
+								<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>Connect the interface for ATS with the shielded and twisted connecting cables (Recommended 0.5mm² or 22AWG).</Content>
+								<Br />
+								<Content>Definition:</Content>
+								<Br />
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" LeftIndent="17.007874015748033" FirstLineIndent="-8.503937007874017" Justification="LeftAlign" BulletsAndNumberingListType="BulletList">
+							<Properties>
+								<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+								<BulletsFont type="string">Arial</BulletsFont>
+								<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>Pin 6 (CN5-P4-P8): ATS_485_A (RS485A)</Content>
+								<Br />
+								<Content>Pin 8 (CN5-P4-P8): ATS_485_B  (RS485B)</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
