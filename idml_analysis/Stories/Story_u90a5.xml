@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u90a5" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>(5) Add device. Click &quot;Add device&quot;, then choose &quot;Halo&quot;, then scan &quot;Charger ID QR&quot; on the </Content>
+				<Br />
+				<Content>      nameplate. </Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
