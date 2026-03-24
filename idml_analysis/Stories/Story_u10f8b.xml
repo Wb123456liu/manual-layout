@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u10f8b" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>(22) (Optional) Power quality response mode parameter Coonfiguration. Click &quot;Configuration&quot;, </Content>
+				<Br />
+				<Content>        enter password, then choose &quot;Grid Code Configuration&quot;. Click &quot;V2G Power_Control&quot; and </Content>
+				<Br />
+				<Content>        click &quot;Configuration&quot;. Choose &quot;Reactive power mode &quot;. Options include PF</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8" Position="Superscript">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>1</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>, QU</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8" Position="Superscript">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>2</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>, QP</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8" Position="Superscript">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>3</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content> and </Content>
+				<Br />
+				<Content>        QT</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8" Position="Superscript">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>4</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FontStyle="Regular" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+					<AppliedFont type="string">Mulish</AppliedFont>
+				</Properties>
+				<Content>.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
