@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u4f2d" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>After installing the equipment, empty packaging materials in the equipment area, such as cartons, foam, plastics, cable ties, etc., shall be removed.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>If a fire occurs, evacuate the building or equipment area and press the fire alarm bell, or call the fire alarm number. Under any circumstances, it is strictly prohibited to re-enter a burning building. </Content>
+				<Br />
+				<Content>Do not alter, damage, or cover the labels or nameplate on the equipment.</Content>
+				<Br />
+				<Content>When installing equipment, tools need to be used to tighten the screws to the specified torque.  </Content>
+				<Br />
+				<Content>Paint scratches that occur during equipment transportation and installation must be repaired in a timely manner, and long-term exposure of the scratched parts to the outdoor environment is strictly prohibited.</Content>
+				<Br />
+				<Content>Do not open the host panel of the DC wallbox.</Content>
+				<Br />
+				<Content>Do not perform reverse engineering, decompilation, disassembly, adaptation, implantation, or other derivative operations on the equipment software. Do not study the internal implementation logic of the equipment, obtain the source code of the equipment software, violate intellectual property rights, or disclose any of the performance test results of the equipment software. </Content>
+				<Br />
+				<Content>During equipment operation, if any faults are found that may cause personal injury or equipment damage, the operation should be immediately terminated. Report it to the responsible person, and effective protective measures should be taken. </Content>
+				<Br />
+				<Content>Before using tools, please master the correct method of using them to avoid injury to people and damage to equipment. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" Justification="LeftAlign" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>To ensure network security, please only use Ethernet connections in protected environments. Using Ethernet connections in public or unprotected areas may result in data breaches or other security risks.</Content>
+				<Br />
+				<Content>Adapter and extension cord are not allowed for use.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
