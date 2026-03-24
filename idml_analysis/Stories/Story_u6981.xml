@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u6981" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Table Self="u6981i6996" HeaderRowCount="1" FooterRowCount="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" BodyRowCount="6" ColumnCount="5" AppliedTableStyle="TableStyle/表头灰" TableDirection="LeftToRightDirection">
+					<Row Self="u6981i6996Row0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="13.214566929126702" MinimumHeight="13.214566929126702" />
+					<Row Self="u6981i6996Row1" Name="1" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="14.173228346456694" MinimumHeight="14.173228346456694" />
+					<Row Self="u6981i6996Row2" Name="2" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="24.66929133858268" MinimumHeight="14.173228346456694" />
+					<Row Self="u6981i6996Row3" Name="3" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="36.66929133858268" MinimumHeight="14.173228346456694" />
+					<Row Self="u6981i6996Row4" Name="4" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="24.66929133858268" MinimumHeight="14.173228346456694" />
+					<Row Self="u6981i6996Row5" Name="5" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="24.66929133858268" MinimumHeight="14.173228346456694" />
+					<Row Self="u6981i6996Row6" Name="6" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" SingleRowHeight="24.669291338582724" MinimumHeight="14.173228346456694" />
+					<Column Self="u6981i6996Column0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="51.76574803149623" />
+					<Column Self="u6981i6996Column1" Name="1" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="141.73228346456693" />
+					<Column Self="u6981i6996Column2" Name="2" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="59.52755905511811" />
+					<Column Self="u6981i6996Column3" Name="3" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="55.2755905514174" />
+					<Column Self="u6981i6996Column4" Name="4" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="45.81299212598421" />
+					<Cell Self="u6981i6996i0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="7">
+								<Content>Check Item</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i1" Name="1:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FillColor="Color/Paper" PointSize="7">
+								<Properties>
+									<Leading type="unit">15</Leading>
+								</Properties>
+								<Content>Content and specification</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i3" Name="2:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FillColor="Color/Paper" PointSize="7">
+								<Properties>
+									<Leading type="unit">15</Leading>
+								</Properties>
+								<Content>Check Method</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i12" Name="3:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FillColor="Color/Paper" PointSize="7">
+								<Content>Conclusion</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i2" Name="4:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="23" RightEdgeStrokePriority="23" TopEdgeStrokePriority="23" BottomEdgeStrokePriority="23">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" FillColor="Color/Paper" PointSize="7">
+								<Content>Remark</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i4" Name="0:1" RowSpan="6" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Appearance</Content>
+								<Br />
+								<Content>check</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i5" Name="1:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>The DC wallbox is intact and complete.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i7" Name="2:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Visually</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i16" Name="3:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Pass </Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Fail</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i6" Name="4:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i9" Name="1:2" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>All components of the equipment are free from stains, scratches, deformations.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996ib" Name="2:2" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Visually</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i1a" Name="3:2" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Pass </Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Fail</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996ia" Name="4:2" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996id" Name="1:3" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Nameplate and other signages including safety warning signs are accurate, clear, and complete.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996if" Name="2:3" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Visually</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i2f" Name="3:3" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Pass </Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Fail</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996ie" Name="4:3" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i25" Name="1:4" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>The charging cable/socket is complete without damage. </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i24" Name="2:4" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Visually</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i2e" Name="3:4" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Pass </Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Fail</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i65" Name="4:4" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i1c" Name="1:5" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>No water or dust in the charging connector. </Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i20" Name="2:5" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Visually</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i2d" Name="3:5" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Pass </Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Fail</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i64" Name="4:5" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i23" Name="1:6" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="LeftAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>The insulation cap of the charging connector is complete.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i1f" Name="2:6" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content>Visually</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i2c" Name="3:6" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Pass </Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FontStyle="Light" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+									<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+								</Properties>
+								<Content>□</Content>
+							</CharacterStyleRange>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+								<Content> Fail</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u6981i6996i63" Name="4:6" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="2.834645669291339" TextLeftInset="2.834645669291339" TextBottomInset="2.834645669291339" TextRightInset="2.834645669291339" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" LeftInset="2.834645669291339" TopInset="2.834645669291339" RightInset="2.834645669291339" BottomInset="2.834645669291339" LeftEdgeStrokeWeight="0.5" RightEdgeStrokeWeight="0.5" TopEdgeStrokeWeight="0.5" BottomEdgeStrokeWeight="0.5" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokePriority="22" RightEdgeStrokePriority="22" TopEdgeStrokePriority="22" BottomEdgeStrokePriority="22">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterAlign">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">12</Leading>
+								</Properties>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
