@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u6b89" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="0" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>The following documents are the design standards for this product:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="11.338582677165356" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>[EN IEC 61851-1:2019]:Electric vehicle conductive charging system-Part 1: General requirements.</Content>
+				<Br />
+				<Content>[EN 61851-24:2014]:Electric vehicle conductive charging system - Part 24: Digital communication between a d.c. EV charging station and an electric vehicle for control of d.c. charging.</Content>
+				<Br />
+				<Content>[EN 61851-23:2014]:Electric vehicle conductive charging system-Part 23: DC electric vehicle charging station</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8" AppliedLanguage="$ID/Chinese: Simplified">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Br />
+				<Content>[EN 301489-52 V1.3.1:2024]:Electromagnetic compatibility and Radio spectrum Matters (ERM); Cordless audio devices in the range 25 MHz to 2 000 MHz:Consumer radio microphones and in-ear monitoring systems operating in the CEPT harmonized band 863 MHz to 865 MHz;Part 2: Harmonized EN under article 3.2 of the R&amp;TTE Directive.</Content>
+				<Br />
+				<Content>[EN 301489-17 V 3.3.1:2024]:Electromagnetic Compatibility (EMC) standard for radio equipment and services; Part 17: Specific conditions for Broadband and Wideband Data Transmission Systems; Harmonised Standard for Electromagnetic Compatibility.</Content>
+				<Br />
+				<Content>[EN 301489-3 V2.3.2:2023]:Electromagnetic Compatibility (EMC) standard for radio equipment and services; Part 3: Specific conditions for Short Range Devices (SRD) operating on frequencies between 9 kHz and 246 GHz; Harmonised Standard for Electromagnetic Compatibility.</Content>
+				<Br />
+				<Content>[EN 301489-1 V 2.2.3:2019]:Electromagnetic Compatibility (EMC) standard for radio equipment and services; Part 1: Common technical requirements; Harmonised Standard for Electromagnetic Compatibility.</Content>
+				<Br />
+				<Content>[EN IEC 61000-6-3:2021]:Electromagnetic compatibility (EMC) - Part 6-3: Generic standards - Emission standard for equipment in residential environments.</Content>
+				<Br />
+				<Content>[EN IEC 61000-6-1:2019]:Electromagnetic compatibility (EMC) - Part 6-1: Generic standards - Immunity standard for residential, commercial and light-industrial environments.</Content>
+				<Br />
+				<Content>[EN IEC 61851-21-2:2021]:Electric vehicle conductive charging system - Part 21-2: Electric vehicle requirements for conductive connection to an AC/DC supply - EMC requirements for off board electric vehicle charging systems.</Content>
+				<Br />
+				<Content>[EN 62479:2010]:Assessment of the compliance of low power electronic and electrical equipment with the basic restrictions related to human exposure to electromagnetic fields (10 MHz to 300 GHz).</Content>
+				<Br />
+				<Content>[EN IEC 62311:2020]:Assessment of electronic and electrical equipment related to human exposure restrictions for electromagnetic fields (0 Hz to 300 GHz).</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
