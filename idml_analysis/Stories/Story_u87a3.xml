@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u87a3" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="0" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>Note: Tubular terminals are only suitable for flexible wires.</Content>
+				<Br />
+				<Content>          The wiring sequence shall refer to Chapters from 7.4 to 7.7.</Content>
+				<Br />
+				<Content>After the crimping of the tubular terminals is completed, the following items must be confirmed to ensure connection reliability:</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
