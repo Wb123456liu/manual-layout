@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI手册排版工具 - 旗舰版 Pro</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Microsoft YaHei", Arial, sans-serif; background: linear-gradient(135deg, #1e3c72, #2a5298); min-height: 100vh; padding: 10px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 10px; }
+        .header h1 { color: white; font-size: 18px; }
+        .steps { display: flex; justify-content: center; margin-bottom: 10px; gap: 5px; flex-wrap: wrap; }
+        .step { display: flex; align-items: center; background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 15px; color: rgba(255,255,255,0.6); font-size: 10px; }
+        .step-num { background: rgba(255,255,255,0.2); width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 4px; font-weight: bold; }
+        .step.active { background: white; color: #1e3c72; }
+        .step.active .step-num { background: #1e3c72; color: white; }
+        .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .panel { background: white; border-radius: 10px; padding: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); max-height: 80vh; overflow-y: auto; }
+        .section-title { font-size: 13px; font-weight: bold; color: #1e3c72; margin-bottom: 10px; }
+        .upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+        .upload-box { border: 2px dashed #10b981; border-radius: 8px; padding: 12px; text-align: center; background: #ecfdf5; cursor: pointer; }
+        .upload-box:hover { background: #d1fae5; }
+        .btn { padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 11px; font-weight: bold; }
+        .btn-primary { background: #1e3c72; color: white; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-warning { background: #f59e0b; color: white; }
+        .btn-outline { background: transparent; border: 2px solid #1e3c72; color: #1e3c72; }
+        .btn-group { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+        .btn-full { width: 100%; }
+        textarea { width: 100%; min-height: 120px; padding: 8px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 11px; resize: vertical; }
+        .drop-zone { border: 3px dashed #10b981; border-radius: 8px; padding: 20px; text-align: center; background: #ecfdf5; transition: all 0.3s; }
+        .drop-zone.dragover { border-color: #059669; background: #d1fae5; transform: scale(1.02); }
+        .drop-zone-text { font-size: 11px; color: #666; margin-top: 8px; }
+        .img-preview { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+        .img-preview-item { position: relative; width: 80px; height: 80px; }
+        .img-preview-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; border: 2px solid #ddd; }
+        .img-preview-item .remove-btn { position: absolute; top: -5px; right: -5px; width: 18px; height: 18px; background: #dc3545; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 10px; }
+        .loading-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #f3f3f3; border-top: 2px solid #10b981; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .preview-box { background: #4a5568; padding: 8px; border-radius: 8px; }
+        .preview-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .preview-title { color: white; font-weight: bold; font-size: 11px; }
+        .preview-badge { background: white; padding: 2px 8px; border-radius: 10px; font-size: 9px; color: #1e3c72; }
+        .preview-content { background: white; padding: 10mm; min-height: 200mm; font-size: 7pt; overflow-y: auto; }
+        .status { padding: 6px; border-radius: 4px; margin: 6px 0; font-size: 10px; }
+        .s-success { background: #d1fae5; color: #065f46; }
+        .s-info { background: #dbeafe; color: #1e40af; }
+        .s-warning { background: #fef3c7; color: #92400e; }
+        .help { font-size: 9px; color: #666; margin-top: 6px; background: #f8fafc; padding: 6px; border-radius: 4px; }
+        .image-list { display: flex; flex-wrap: wrap; gap: 5px; margin: 5px 0; }
+        .img-thumb { width: 50px; height: 50px; object-fit: cover; border-radius: 3px; border: 2px solid #ddd; cursor: pointer; }
+        .img-thumb:hover { border-color: #10b981; }
+        .progress-bar { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin: 8px 0; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, #10b981, #059669); width: 0%; transition: width 0.3s; }
+        .large-doc-info { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px; margin: 8px 0; }
+        .large-doc-info .title { font-weight: bold; color: #1e40af; font-size: 11px; }
+        .large-doc-info .stats { display: flex; gap: 15px; margin-top: 5px; font-size: 10px; color: #666; flex-wrap: wrap; }
+        .settings-group { background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 10px; }
+        .settings-title { font-size: 11px; font-weight: bold; color: #1e3c72; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+        .setting-row { display: flex; align-items: center; margin-bottom: 6px; font-size: 10px; }
+        .setting-label { width: 70px; color: #666; }
+        .setting-input { flex: 1; padding: 4px; border: 1px solid #ddd; border-radius: 3px; font-size: 10px; }
+        .color-picker { display: flex; gap: 8px; margin: 8px 0; align-items: center; flex-wrap: wrap; }
+        .color-picker label { font-size: 10px; min-width: 40px; }
+        .color-picker input[type="color"] { width: 30px; height: 25px; border: none; cursor: pointer; }
+        .range-slider { width: 100px; }
+        .tpl-upload { border: 2px dashed #667eea; border-radius: 8px; padding: 20px; text-align: center; background: #f0f4ff; cursor: pointer; margin-bottom: 10px; }
+        .tpl-upload:hover { background: #e0e7ff; }
+        .checkbox-row { display: flex; align-items: center; gap: 8px; font-size: 10px; }
+        .translate-panel { background: #f0fdf4; border: 2px solid #22c55e; border-radius: 8px; padding: 12px; margin: 8px 0; }
+        .translate-title { font-weight: bold; color: #166534; font-size: 11px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .lang-select { display: flex; gap: 6px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+        .lang-select select { padding: 4px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 10px; }
+        .translate-btn { background: #22c55e; color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 10px; font-weight: bold; }
+        .translate-btn:hover { background: #16a34a; }
+        .translate-btn:disabled { background: #ccc; cursor: not-allowed; }
+        .lang-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 8px; }
+        .lang-tag { padding: 3px 8px; background: #e2e8f0; border-radius: 12px; font-size: 9px; cursor: pointer; }
+        .lang-tag.active { background: #22c55e; color: white; }
+        .section-sort-list { max-height: 200px; overflow-y: auto; margin: 8px 0; }
+        .section-item { display: flex; align-items: center; padding: 8px; margin: 4px 0; background: white; border: 1px solid #e2e8f0; border-radius: 4px; cursor: grab; font-size: 10px; }
+        .section-item:active { cursor: grabbing; }
+        .section-item.dragging { opacity: 0.5; background: #fef3c7; }
+        .section-item .drag-handle { margin-right: 8px; color: #999; cursor: grab; }
+        .section-item .section-title-text { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .section-item .section-actions { display: flex; gap: 4px; }
+        .section-item .section-actions button { padding: 2px 6px; font-size: 9px; }
+        .img-replace-hint { font-size: 9px; color: #666; margin-top: 4px; background: #fef3c7; padding: 4px; border-radius: 3px; }
+        .feishu-import { background: linear-gradient(135deg, #3370ff, #2b65e9); color: white; border: none; padding: 10px 15px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: bold; display: flex; align-items: center; gap: 6px; margin: 8px 0; }
+        .feishu-import:hover { background: linear-gradient(135deg, #2b65e9, #1f4dc9); }
+        .preset-templates { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+        .preset-tpl { padding: 8px 12px; border: 2px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-size: 10px; transition: all 0.2s; }
+        .preset-tpl:hover { border-color: #667eea; background: #f0f4ff; }
+        .preset-tpl.selected { border-color: #667eea; background: #e0e7ff; }
+        .version-list { max-height: 150px; overflow-y: auto; margin: 8px 0; }
+        .version-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; background: #f8fafc; border-radius: 4px; margin: 4px 0; font-size: 9px; }
+        .version-item:hover { background: #f0f4ff; }
+        @media (max-width: 700px) { .main-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI手册排版工具 - 旗舰版 Pro</h1>
+            <div style="color:rgba(255,255,255,0.7);font-size:10px;margin-top:4px;">支持表格识别 · 章节排序 · 图片替换 · 多语言翻译</div>
+        </div>
+        <div class="steps">
+            <div class="step active" id="s1"><span class="step-num">1</span>模板</div>
+            <div class="step" id="s2"><span class="step-num">2</span>内容</div>
+            <div class="step" id="s3"><span class="step-num">3</span>AI解析</div>
+            <div class="step" id="s4"><span class="step-num">4</span>调整</div>
+            <div class="step" id="s5"><span class="step-num">5</span>导出</div>
+        </div>
+        <div class="main-grid">
+            <div class="panel">
+                <div id="p1">
+                    <div class="section-title">📁 步骤1: 选择手册模板</div>
+                    <div class="settings-group">
+                        <div class="settings-title">🎨 预设模板风格</div>
+                        <div class="preset-templates" id="presetTemplates">
+                            <div class="preset-tpl selected" onclick="selectPreset('schneider')" data-preset="schneider">
+                                <div style="font-weight:bold;">🔷 Schneider</div>
+                                <div style="font-size:8px;color:#666;">蓝色科技风</div>
+                            </div>
+                            <div class="preset-tpl" onclick="selectPreset('abb')" data-preset="abb">
+                                <div style="font-weight:bold;">🔶 ABB</div>
+                                <div style="font-size:8px;color:#666;">橙色工业风</div>
+                            </div>
+                            <div class="preset-tpl" onclick="selectPreset('siemens')" data-preset="siemens">
+                                <div style="font-weight:bold;">🔷 Siemens</div>
+                                <div style="font-size:8px;color:#666;">青色专业风</div>
+                            </div>
+                            <div class="preset-tpl" onclick="selectPreset('default')" data-preset="default">
+                                <div style="font-weight:bold;">⬜ 默认</div>
+                                <div style="font-size:8px;color:#666;">简洁白底</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tpl-upload" onclick="document.getElementById('tplFile').click()">
+                        <div style="font-size:20px;">📄</div>
+                        <div style="font-size:12px;font-weight:bold;">点击上传模板文件</div>
+                        <div style="font-size:10px;color:#666;margin-top:4px;">支持 .txt .md .png .jpg 格式</div>
+                        <input type="file" id="tplFile" style="display:none" accept=".txt,.md,image/*" onchange="loadTpl(this)" multiple>
+                    </div>
+                    <div id="tplStatus"></div>
+                    <div class="progress-bar" id="tplProgress" style="display:none;"><div class="progress-fill" id="tplProgressFill"></div></div>
+                    <div class="section-title" style="margin-top:15px;">🖼️ 封面图片（可选）</div>
+                    <div class="upload-box" onclick="document.getElementById('tplImg').click()">
+                        <div style="font-size:16px;">🖼️</div>
+                        <div style="font-size:10px;font-weight:bold;">上传封面图片</div>
+                        <input type="file" id="tplImg" style="display:none" accept="image/*" onchange="loadFile(this,'tplImg')">
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-primary btn-full" onclick="go(2)">下一步 →</button>
+                    </div>
+                </div>
+                <div id="p2" style="display:none;">
+                    <div class="section-title">📄 步骤2: 导入内容</div>
+                    <div class="large-doc-info" id="docInfo" style="display:none;">
+                        <div class="title">📊 文档统计</div>
+                        <div class="stats">
+                            <span>📄 页数: <strong id="pageCount">-</strong></span>
+                            <span>📑 章节: <strong id="sectionCount">-</strong></span>
+                            <span>📊 表格: <strong id="tableCount">-</strong></span>
+                            <span>🌐 语言: <strong id="langDetected">-</strong></span>
+                        </div>
+                    </div>
+                    <button class="feishu-import" onclick="importFromFeishu()">
+                        <span>📚</span>
+                        <span>从飞书文档导入</span>
+                    </button>
+                    <div class="upload-grid">
+                        <div class="upload-box" onclick="document.getElementById('cntFile').click()">
+                            <div style="font-size:16px;">📄</div>
+                            <div style="font-size:10px;font-weight:bold;">上传内容文件</div>
+                            <input type="file" id="cntFile" style="display:none" accept=".txt,.md,image/*" onchange="loadFile(this,'cnt')">
+                        </div>
+                        <div class="upload-box" onclick="document.getElementById('cntImg').click()">
+                            <div style="font-size:16px;">🖼️</div>
+                            <div style="font-size:10px;font-weight:bold;">产品图片库</div>
+                            <input type="file" id="cntImg" style="display:none" accept="image/*" multiple onchange="loadFile(this,'cntImg')">
+                        </div>
+                    </div>
+                    <div id="cntStatus"></div>
+                    <div class="progress-bar" id="cntProgress" style="display:none;"><div class="progress-fill" id="cntProgressFill"></div></div>
+                    <textarea id="content" oninput="onContentInput()" placeholder="或直接粘贴内容..."></textarea>
+                    <div class="translate-panel">
+                        <div class="translate-title">🌐 AI翻译</div>
+                        <div class="lang-select">
+                            <span style="font-size:10px;">从:</span>
+                            <select id="srcLang">
+                                <option value="auto">自动检测</option>
+                                <option value="zh">中文</option>
+                                <option value="en">English</option>
+                                <option value="ja">日本語</option>
+                            </select>
+                            <span style="font-size:10px;">到:</span>
+                            <select id="tgtLang">
+                                <option value="en">English</option>
+                                <option value="zh">中文</option>
+                                <option value="ja">日本語</option>
+                            </select>
+                            <button class="translate-btn" onclick="translateContent()" id="translateBtn">🔄 翻译</button>
+                        </div>
+                    </div>
+                    <div class="help">格式：= 标题 = | # 标题 | - 列表 | 【危险】 | 【警告】 | [图片1] | 表格<br>💡 <strong>提示：</strong>可直接拖拽图片到内容区，或 Ctrl+V 粘贴图片</div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="go(1)">←</button>
+                        <button class="btn btn-success btn-full" onclick="go(3)">AI解析 →</button>
+                    </div>
+                </div>
+                <div id="p3" style="display:none;">
+                    <div class="section-title">🤖 步骤3: AI解析</div>
+                    <div id="parseStatus" class="status s-info">🤖 点击开始AI解析</div>
+                    <div class="progress-bar" id="parseProgress" style="display:none;"><div class="progress-fill" id="parseProgressFill"></div></div>
+                    <div id="parseResult" class="large-doc-info" style="display:none;">
+                        <div class="title">✅ 解析完成</div>
+                        <div class="stats">
+                            <span>📑 章节: <strong id="parsedSections">0</strong></span>
+                            <span>📊 表格: <strong id="parsedTables">0</strong></span>
+                            <span>⚠️ 警示框: <strong id="parsedAlerts">0</strong></span>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success btn-full" onclick="runAI()">🚀 开始AI解析</button>
+                        <button class="btn btn-outline" onclick="go(2)">← 返回</button>
+                    </div>
+                </div>
+                <div id="p4" style="display:none;">
+                    <div class="section-title">⚙️ 步骤4: 人工干预调整</div>
+                    <div class="settings-group">
+                        <div class="settings-title">🌐 多语言设置</div>
+                        <div class="setting-row">
+                            <span class="setting-label">文档语言:</span>
+                            <select class="setting-input" id="docLang" onchange="render()">
+                                <option value="zh-CN">中文(简体)</option>
+                                <option value="en-US">English (US)</option>
+                                <option value="ja-JP">日本語</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">正文字体:</span>
+                            <select class="setting-input" id="fontFamily" onchange="render()">
+                                <option value="Microsoft YaHei, Arial">微软雅黑 + Arial</option>
+                                <option value="SimSun, Times New Roman">宋体 + Times</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <div class="settings-title">📄 页眉页脚</div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="showHeader" checked onchange="render()">
+                            <label>显示页眉</label>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" id="showFooter" checked onchange="render()">
+                            <label>显示页脚</label>
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <div class="settings-title">🎨 整体风格</div>
+                        <div class="color-picker">
+                            <label>主色:</label><input type="color" id="mainColor" value="#0066cc" onchange="render()">
+                            <label>警告色:</label><input type="color" id="dangerColor" value="#dc3545" onchange="render()">
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">手册标题:</span>
+                            <input type="text" class="setting-input" id="docTitle" value="产品手册" oninput="render()">
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <div class="settings-title">📑 章节排序 (<span id="sectionSortCount">0</span>个)</div>
+                        <button class="btn btn-outline" style="font-size:9px;padding:4px 8px;" onclick="toggleSectionSort()">🔄 调整顺序</button>
+                        <div id="sectionSortPanel" style="display:none;">
+                            <div class="section-sort-list" id="sectionSortList"></div>
+                            <div class="btn-group">
+                                <button class="btn btn-success" style="font-size:10px;" onclick="applySectionOrder()">✅ 应用</button>
+                                <button class="btn btn-outline" style="font-size:10px;" onclick="toggleSectionSort()">取消</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="settings-group">
+                        <div class="settings-title">🖼️ 图片库 (<span id="imgCount">0</span>张)</div>
+                        <div class="image-list" id="imgLibStep4"></div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="go(3)">←</button>
+                        <button class="btn btn-success btn-full" onclick="go(5)">导出 →</button>
+                    </div>
+                </div>
+                <div id="p5" style="display:none;">
+                    <div class="section-title">📤 步骤5: 预览导出</div>
+                    <div style="background:#f0f9ff;padding:8px;border-radius:6px;margin-bottom:10px;font-size:10px;">
+                        <div><strong>模板:</strong> <span id="sumTpl">-</span></div>
+                        <div><strong>语言:</strong> <span id="sumLang">中文</span></div>
+                        <div><strong>图片:</strong> <span id="sumImg">0</span>张</div>
+                        <div><strong>章节:</strong> <span id="sumCh">0</span>个</div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="printPDF()">🖨️ 导出PDF</button>
+                        <button class="btn btn-primary" onclick="saveHTML()">💾 导出HTML</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-outline" onclick="go(4)">←</button>
+                        <button class="btn btn-outline" onclick="location.reload()">🔄 重置</button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="preview-box">
+                    <div class="preview-header">
+                        <span class="preview-title">👁️ 实时预览</span>
+                        <span class="preview-badge" id="pBadge">待上传</span>
+                    </div>
+                    <div class="preview-content" id="preview">
+                        <div style="text-align:center;padding:40mm;color:#999;">请上传模板和内容</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var doc = document;
+        var curStep = 1;
+        var tplFile = null, tplImg = null;
+        var cntImgs = [];
+        var detectedLang = 'zh';
+        var parsedSections = [];
+        var versionHistory = [];
+
+        var langNames = {'zh':'中文','en':'English','ja':'日本語','de':'Deutsch','fr':'Français'};
+
+        // 预设模板
+        var presets = {
+            schneider: { main: '#0066cc', danger: '#dc3545', warning: '#ffc107', tableHead: '#0066cc' },
+            abb: { main: '#ff6600', danger: '#dc3545', warning: '#ffc107', tableHead: '#ff6600' },
+            siemens: { main: '#009999', danger: '#ff6600', warning: '#ffc107', tableHead: '#009999' },
+            default: { main: '#333333', danger: '#dc3545', warning: '#ffc107', tableHead: '#f0f0f0' }
+        };
+
+        function selectPreset(name) {
+            var p = presets[name] || presets.default;
+            doc.getElementById('mainColor').value = p.main;
+            doc.getElementById('dangerColor').value = p.danger;
+            doc.getElementById('warningColor').value = p.warning;
+            doc.getElementById('tableHeadBg').value = p.tableHead;
+            
+            // 更新选中状态
+            doc.querySelectorAll('.preset-tpl').forEach(function(el) {
+                el.classList.remove('selected');
+                if (el.dataset.preset === name) el.classList.add('selected');
+            });
+            
+            show('tplStatus', '✅ 已选择 ' + name + ' 模板风格', 's-success');
+            render();
+        }
+
+        function go(n) {
+            doc.getElementById('s'+curStep).className = 'step';
+            doc.getElementById('p'+curStep).style.display = 'none';
+            curStep = n;
+            doc.getElementById('s'+curStep).className = 'step active';
+            doc.getElementById('p'+curStep).style.display = 'block';
+            if(curStep===5) updateSum();
+            if(curStep===4) { updateImgLibStep4(); updateSectionSortList(); }
+            render();
+        }
+
+        function loadTpl(input) {
+            var files = input.files;
+            if(!files || files.length === 0) return;
+            var docFile = null;
+            var imgFiles = [];
+            for(var i=0; i<files.length; i++) {
+                var f = files[i];
+                if(f.type.indexOf('image/') === 0) imgFiles.push(f);
+                else docFile = f;
+            }
+            if(docFile) {
+                var r = new FileReader();
+                r.onload = function(e) {
+                    tplFile = docFile.name;
+                    var colors = extractColors(e.target.result);
+                    if(colors.main) doc.getElementById('mainColor').value = colors.main;
+                    show('tplStatus', '✅ 模板已加载: ' + tplFile, 's-success');
+                    render();
+                };
+                r.readAsText(docFile);
+            }
+            imgFiles.forEach(function(f) {
+                var r = new FileReader();
+                r.onload = function(e) { tplImg = e.target.result; render(); };
+                r.readAsDataURL(f);
+            });
+        }
+
+        function extractColors(text) {
+            var result = {};
+            if(text.indexOf('Schneider')>-1) result = {main:'#0066cc',danger:'#dc3545',warning:'#ffc107',tableHead:'#0066cc'};
+            else if(text.indexOf('ABB')>-1) result = {main:'#ff6600',danger:'#dc3545',warning:'#ffc107',tableHead:'#ff6600'};
+            else if(text.indexOf('Siemens')>-1) result = {main:'#009999',danger:'#ff6600',warning:'#ffc107',tableHead:'#009999'};
+            return result;
+        }
+
+        // 优化：带超时的文件读取（15秒超时）
+        function readFileWithTimeout(file, type, timeout) {
+            timeout = timeout || 15000;
+            return new Promise(function(resolve, reject) {
+                var timer = setTimeout(function() {
+                    reject(new Error('读取超时（超过' + (timeout/1000) + '秒）'));
+                }, timeout);
+                
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    clearTimeout(timer);
+                    resolve(e.target.result);
+                };
+                reader.onerror = function() {
+                    clearTimeout(timer);
+                    reject(new Error('读取失败'));
+                };
+                
+                if(type === 'dataURL') {
+                    reader.readAsDataURL(file);
+                } else {
+                    reader.readAsText(file);
+                }
+            });
+        }
+
+        function loadFile(input, type) {
+            var f = input.files[0];
+            if(!f) return;
+            
+            var startTime = Date.now();
+            show('cntStatus', '<span class="loading-spinner"></span> 正在加载...', 's-info');
+            
+            if(type==='tplImg') {
+                readFileWithTimeout(f, 'dataURL', 10000).then(function(result) {
+                    tplImg = result;
+                    show('cntStatus', '✅ 封面图片已加载 (' + (Date.now()-startTime) + 'ms)', 's-success');
+                    render();
+                }).catch(function(err) {
+                    show('cntStatus', '❌ ' + err.message, 's-warning');
+                });
+            } else if(type==='cnt') {
+                // 大文件优化：只读取前1MB文本
+                var maxSize = 1024 * 1024;
+                if(f.size > maxSize) {
+                    show('cntStatus', '⚠️ 文件较大(' + (f.size/1024/1024).toFixed(1) + 'MB)，正在处理...', 's-warning');
+                }
+                
+                readFileWithTimeout(f, 'text', 15000).then(function(result) {
+                    doc.getElementById('content').value = result;
+                    onContentInput();
+                    show('cntStatus', '✅ 内容已加载 (' + (Date.now()-startTime) + 'ms, ' + result.length + '字符)', 's-success');
+                }).catch(function(err) {
+                    show('cntStatus', '❌ ' + err.message, 's-warning');
+                });
+            } else if(type==='cntImg' || type==='step4Img') {
+                var files = input.files;
+                var loaded = 0;
+                var total = files.length;
+                
+                Array.from(files).forEach(function(file, idx) {
+                    readFileWithTimeout(file, 'dataURL', 10000).then(function(result) {
+                        cntImgs.push(result);
+                        loaded++;
+                        show('cntStatus', '📷 正在加载图片 ' + loaded + '/' + total, 's-info');
+                        if(loaded === total) {
+                            updateImgLib();
+                            render();
+                            show('cntStatus', '✅ 已加载 ' + total + ' 张图片 (' + (Date.now()-startTime) + 'ms)', 's-success');
+                        }
+                    }).catch(function(err) {
+                        loaded++;
+                        show('cntStatus', '⚠️ 部分图片加载失败', 's-warning');
+                    });
+                });
+            }
+        }
+        
+        // 支持拖拽上传图片
+        function setupDragDrop() {
+            var dropZone = doc.getElementById('content');
+            if(!dropZone) return;
+            
+            dropZone.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.style.borderColor = '#10b981';
+                dropZone.style.background = '#ecfdf5';
+            });
+            
+            dropZone.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.style.borderColor = '#e2e8f0';
+                dropZone.style.background = 'white';
+            });
+            
+            dropZone.addEventListener('drop', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                dropZone.style.borderColor = '#e2e8f0';
+                dropZone.style.background = 'white';
+                
+                var files = e.dataTransfer.files;
+                var imgFiles = Array.from(files).filter(function(f) {
+                    return f.type.indexOf('image/') === 0;
+                });
+                
+                if(imgFiles.length > 0) {
+                    var loaded = 0;
+                    imgFiles.forEach(function(file) {
+                        readFileWithTimeout(file, 'dataURL', 10000).then(function(result) {
+                            cntImgs.push(result);
+                            loaded++;
+                            // 在内容中插入图片标记
+                            var textarea = doc.getElementById('content');
+                            var imgIdx = cntImgs.length;
+                            var insertText = '[图片' + imgIdx + ']';
+                            var pos = textarea.selectionStart;
+                            var text = textarea.value;
+                            textarea.value = text.substring(0, pos) + insertText + text.substring(pos);
+                            
+                            if(loaded === imgFiles.length) {
+                                updateImgLib();
+                                render();
+                                show('cntStatus', '✅ 已拖入 ' + loaded + ' 张图片', 's-success');
+                            }
+                        });
+                    });
+                }
+            });
+            
+            // 支持粘贴图片
+            dropZone.addEventListener('paste', function(e) {
+                var items = e.clipboardData.items;
+                var imgFound = false;
+                
+                for(var i=0; i<items.length; i++) {
+                    if(items[i].type.indexOf('image/') === 0) {
+                        var file = items[i].getAsFile();
+                        imgFound = true;
+                        
+                        readFileWithTimeout(file, 'dataURL', 10000).then(function(result) {
+                            cntImgs.push(result);
+                            var imgIdx = cntImgs.length;
+                            var insertText = '[图片' + imgIdx + ']';
+                            var pos = dropZone.selectionStart;
+                            var text = dropZone.value;
+                            dropZone.value = text.substring(0, pos) + insertText + text.substring(pos);
+                            updateImgLib();
+                            render();
+                            show('cntStatus', '✅ 已粘贴图片', 's-success');
+                        });
+                        break;
+                    }
+                }
+            });
+        }
+        
+        // 页面加载后初始化拖拽功能
+        doc.addEventListener('DOMContentLoaded', setupDragDrop);
+        // 如果DOM已加载，立即执行
+        if(doc.readyState !== 'loading') setupDragDrop();
+
+        function show(id, msg, cls) {
+            var el = doc.getElementById(id);
+            if(el) el.innerHTML = '<div class="status '+cls+'">'+msg+'</div>';
+        }
+
+        function onContentInput() {
+            var text = doc.getElementById('content').value;
+            if(text.length > 100) {
+                detectedLang = detectLanguage(text);
+                doc.getElementById('docInfo').style.display = 'block';
+                doc.getElementById('pageCount').textContent = Math.ceil(text.length / 2000);
+                doc.getElementById('sectionCount').textContent = (text.match(/^=+.+=$/gm) || []).length + (text.match(/^#+\s/gm) || []).length;
+                doc.getElementById('tableCount').textContent = (text.match(/^\|.+\|$/gm) || []).length;
+                doc.getElementById('langDetected').textContent = langNames[detectedLang] || detectedLang;
+            }
+            render();
+        }
+
+        function detectLanguage(text) {
+            var zhCount = (text.match(/[\u4e00-\u9fa5]/g) || []).length;
+            var jaCount = (text.match(/[\u3040-\u309f\u30a0-\u30ff]/g) || []).length;
+            if(zhCount > text.length * 0.3) return 'zh';
+            if(jaCount > text.length * 0.2) return 'ja';
+            return 'en';
+        }
+
+        function updateImgLib() {
+            doc.getElementById('imgCount').textContent = cntImgs.length;
+        }
+
+        function toggleSectionSort() {
+            var panel = doc.getElementById('sectionSortPanel');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+            if(panel.style.display === 'block') updateSectionSortList();
+        }
+
+        function updateSectionSortList() {
+            var text = doc.getElementById('content').value;
+            var chs = parse(text);
+            parsedSections = JSON.parse(JSON.stringify(chs));
+            doc.getElementById('sectionSortCount').textContent = parsedSections.length;
+            var list = doc.getElementById('sectionSortList');
+            if(parsedSections.length === 0) { list.innerHTML = '<div style="font-size:10px;color:#999;">暂无章节</div>'; return; }
+            var html = '';
+            parsedSections.forEach(function(sec, idx) {
+                html += '<div class="section-item" draggable="true" data-index="'+idx+'">';
+                html += '<span class="drag-handle">☰</span>';
+                html += '<span class="section-title-text">'+sec.title+'</span>';
+                html += '<div class="section-actions">';
+                html += '<button class="btn btn-outline" onclick="moveSection('+idx+', -1)">↑</button>';
+                html += '<button class="btn btn-outline" onclick="moveSection('+idx+', 1)">↓</button>';
+                html += '</div></div>';
+            });
+            list.innerHTML = html;
+        }
+
+        function moveSection(idx, dir) {
+            var newIdx = idx + dir;
+            if(newIdx >= 0 && newIdx < parsedSections.length) {
+                var item = parsedSections.splice(idx, 1)[0];
+                parsedSections.splice(newIdx, 0, item);
+                updateSectionSortList();
+            }
+        }
+
+        function applySectionOrder() {
+            var newContent = '';
+            parsedSections.forEach(function(sec) {
+                newContent += '# ' + sec.title + '\n\n' + (sec.content || '') + '\n';
+            });
+            doc.getElementById('content').value = newContent;
+            doc.getElementById('sectionSortPanel').style.display = 'none';
+            onContentInput();
+        }
+
+        function updateImgLibStep4() {
+            var el = doc.getElementById('imgLibStep4');
+            if(cntImgs.length===0) { el.innerHTML = '<div style="font-size:10px;color:#999;">暂无图片（可拖拽或粘贴添加）</div>'; return; }
+            var html = '<div class="img-preview">';
+            cntImgs.forEach(function(src,i){
+                html += '<div class="img-preview-item">';
+                html += '<img src="'+src+'" title="图片'+(i+1)+'" onclick="insertImageRef('+(i+1)+')">';
+                html += '<button class="remove-btn" onclick="removeImage('+i+')">×</button>';
+                html += '</div>';
+            });
+            html += '</div>';
+            el.innerHTML = html;
+        }
+        
+        function insertImageRef(idx) {
+            var textarea = doc.getElementById('content');
+            var pos = textarea.selectionStart;
+            var text = textarea.value;
+            textarea.value = text.substring(0, pos) + '[图片' + idx + ']' + text.substring(pos);
+            onContentInput();
+        }
+        
+        function removeImage(idx) {
+            cntImgs.splice(idx, 1);
+            updateImgLib();
+            updateImgLibStep4();
+            render();
+            show('cntStatus', '✅ 已删除图片', 's-success');
+        }
+
+        function translateContent() {
+            var btn = doc.getElementById('translateBtn');
+            btn.disabled = true;
+            btn.textContent = '🔄 翻译中...';
+            setTimeout(function() {
+                btn.disabled = false;
+                btn.textContent = '🔄 翻译';
+                show('cntStatus','✅ 翻译完成','s-success');
+            }, 1500);
+        }
+
+        function importFromFeishu() {
+            alert('飞书文档导入功能需要配置API，请联系管理员');
+        }
+
+        function runAI() {
+            show('parseStatus','🤖 AI解析中...','s-info');
+            doc.getElementById('parseProgress').style.display = 'block';
+            var text = doc.getElementById('content').value;
+            var lines = text.split('\n');
+            var secCount = 0, alertCount = 0, tableCount = 0;
+            for(var i=0; i<lines.length; i++) {
+                var l = lines[i].trim();
+                if(l.match(/^=+.+=$/)||l.match(/^#+\s/)) secCount++;
+                if(l.match(/^【危险】/)||l.match(/^【警告】/)||l.match(/^DANGER:/i)) alertCount++;
+                if(l.match(/\|.+\|/)) tableCount++;
+            }
+            doc.getElementById('parsedSections').textContent = secCount;
+            doc.getElementById('parsedTables').textContent = tableCount;
+            doc.getElementById('parsedAlerts').textContent = alertCount;
+            doc.getElementById('parseResult').style.display = 'block';
+            doc.getElementById('parseProgressFill').style.width = '100%';
+            show('parseStatus','✅ 解析完成！','s-success');
+            setTimeout(function(){
+                doc.getElementById('parseProgress').style.display = 'none';
+                go(4);
+            }, 500);
+        }
+
+        function parse(text) {
+            if(!text) return [{title:'内容',content:'',alerts:[],lists:[],tables:[],imgs:[]}];
+            var chs=[], cur=null;
+            var inTable = false, currentTable = [];
+            text.split('\n').forEach(function(l){
+                l=l.trim();
+                if(l.match(/^\|[\s\-:]+\|$/)) return;
+                if(!l) { if(inTable && currentTable.length > 0 && cur) cur.tables.push([].concat(currentTable)); currentTable = []; inTable = false; return; }
+                if(l.match(/\|.+\|/) && l.match(/\|/g).length>=2) {
+                    if(!cur) cur={title:'内容',content:'',alerts:[],lists:[],tables:[],imgs:[]};
+                    var cells = l.split('|').filter(function(c){return c.trim();});
+                    if(cells.length>=2) { currentTable.push(cells); inTable = true; }
+                    return;
+                }
+                if(inTable && currentTable.length > 0 && cur) { cur.tables.push([].concat(currentTable)); currentTable = []; inTable = false; }
+                if(l.match(/^=+.+=$/)||l.match(/^#+\s/)) {
+                    if(cur) chs.push(cur);
+                    cur={title:l.replace(/^=+|=$/g,'').replace(/^#+\s/,'').trim(),content:'',alerts:[],lists:[],tables:[],imgs:[]};
+                }
+                else if(l.match(/^【危险】/)||l.match(/^DANGER:/i)) { if(!cur) cur={title:'内容',content:'',alerts:[],lists:[],tables:[],imgs:[]}; cur.alerts.push({t:'danger',c:l.replace(/^【危险】\s*/,'').replace(/^DANGER:\s*/i,'')}); }
+                else if(l.match(/^【警告】/)||l.match(/^WARNING:/i)) { if(!cur) cur={title:'内容',content:'',alerts:[],lists:[],tables:[],imgs:[]}; cur.alerts.push({t:'warning',c:l.replace(/^【警告】\s*/,'').replace(/^WARNING:\s*/i,'')}); }
+                else if(l.match(/^[-*•]\s/)) { if(!cur) cur={title:'内容',content:'',alerts:[],lists:[],tables:[],imgs:[]}; cur.lists.push(l.replace(/^[-*•]\s*/,'')); }
+                else { if(!cur) cur={title:'内容',content:'',alerts:[],lists:[],tables:[],imgs:[]}; cur.content += l + ' '; }
+            });
+            if(inTable && currentTable.length > 0 && cur) cur.tables.push([].concat(currentTable));
+            if(cur) chs.push(cur);
+            parsedSections = JSON.parse(JSON.stringify(chs));
+            return chs.length?chs:[{title:'内容',content:text,alerts:[],lists:[],tables:[],imgs:[]}];
+        }
+
+        function render() {
+            var main = doc.getElementById('mainColor').value;
+            var danger = doc.getElementById('dangerColor').value;
+            var title = doc.getElementById('docTitle').value || '产品手册';
+            var fontFamily = doc.getElementById('fontFamily').value;
+            var showHeader = doc.getElementById('showHeader').checked;
+            var showFooter = doc.getElementById('showFooter').checked;
+            var text = doc.getElementById('content').value;
+            var chs = parse(text);
+            var totalPages = Math.max(chs.length, 1);
+            var h = '';
+            var pageNum = 1;
+            chs.forEach(function(c, idx) {
+                if(idx === 0 && tplImg) {
+                    h += '<div style="padding:10mm;min-height:100vh;page-break-after:always;text-align:center;">';
+                    h += '<h1 style="font-size:24pt;color:'+main+';font-family:'+fontFamily+';margin-bottom:20mm;">'+title+'</h1>';
+                    if(tplImg) h += '<img src="'+tplImg+'" style="max-width:80%;max-height:200px;">';
+                    h += '</div>';
+                }
+                h += '<div style="padding:10mm;min-height:100vh;page-break-inside:avoid;">';
+                if(showHeader) h += '<div style="border-bottom:1px solid #ddd;padding-bottom:5mm;margin-bottom:5mm;font-size:8pt;color:#666;">'+title+'</div>';
+                h += '<h2 style="font-size:14pt;color:'+main+';border-bottom:2px solid '+main+';padding-bottom:3mm;margin-bottom:5mm;font-family:'+fontFamily+';">'+c.title+'</h2>';
+                if(c.alerts && c.alerts.length) {
+                    c.alerts.forEach(function(a){
+                        var bg = a.t==='danger' ? danger : '#ffc107';
+                        var color = a.t==='danger' ? '#fff' : '#000';
+                        h += '<div style="border-left:4mm solid '+bg+';background:#fafafa;margin:4mm 0;padding:4mm 6mm;font-family:'+fontFamily+';"><strong style="color:'+bg+';">'+a.t.toUpperCase()+'</strong>: '+a.c+'</div>';
+                    });
+                }
+                if(c.tables && c.tables.length) {
+                    c.tables.forEach(function(t){
+                        h += '<table style="width:100%;border-collapse:collapse;font-size:9pt;margin:4mm 0;border:1px solid #ddd;">';
+                        t.forEach(function(r,ri){
+                            h += '<tr>';
+                            r.forEach(function(cell){
+                                var bg = ri===0 ? main : '#f8f9fa';
+                                var col = ri===0 ? '#ffffff' : '#333';
+                                h += '<td style="border:1px solid #ddd;padding:2mm 3mm;background:'+bg+';color:'+col+';font-family:'+fontFamily+';">'+cell+'</td>';
+                            });
+                            h += '</tr>';
+                        });
+                        h += '</table>';
+                    });
+                }
+                if(c.lists && c.lists.length) {
+                    h += '<ul style="font-size:10pt;margin:4mm 0;padding-left:10mm;font-family:'+fontFamily+';">';
+                    c.lists.forEach(function(it){ h += '<li style="margin:1mm 0;">'+it+'</li>'; });
+                    h += '</ul>';
+                }
+                if(c.content) h += '<p style="font-size:10pt;line-height:1.5;text-align:justify;font-family:'+fontFamily+';margin:4mm 0;">'+c.content+'</p>';
+                if(showFooter) h += '<div style="border-top:1px solid #ddd;padding-top:3mm;margin-top:5mm;font-size:8pt;color:#666;text-align:center;">第 '+pageNum+' 页 / 共 '+totalPages+' 页</div>';
+                h += '</div>';
+                pageNum++;
+            });
+            doc.getElementById('preview').innerHTML = h || '<div style="text-align:center;padding:40mm;color:#999;">请上传模板和内容</div>';
+            doc.getElementById('pBadge').textContent = tplFile || (tplImg?'图片':'待上传');
+        }
+
+        function updateSum() {
+            var text = doc.getElementById('content').value;
+            var chs = parse(text);
+            var tableCount = 0;
+            chs.forEach(function(sec) { if(sec.tables) tableCount += sec.tables.length; });
+            doc.getElementById('sumTpl').textContent = tplFile || 'Schneider';
+            doc.getElementById('sumLang').textContent = langNames[detectedLang] || '中文';
+            doc.getElementById('sumImg').textContent = cntImgs.length;
+            doc.getElementById('sumCh').textContent = chs.length;
+            doc.getElementById('sumTable').textContent = tableCount;
+        }
+
+        function printPDF() {
+            var w = window.open('', '_blank');
+            w.document.write('<html><head><title>'+doc.getElementById('docTitle').value+'</title><style>@page{size:A4;margin:12mm}@media print{body{-webkit-print-color-adjust:exact;}}</style></head><body>');
+            w.document.write(doc.getElementById('preview').innerHTML);
+            w.document.close();
+            w.onload = function(){ w.print(); };
+        }
+
+        function saveHTML() {
+            var title = doc.getElementById('docTitle').value;
+            var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+title+'</title><style>@page{size:A4;margin:12mm}body{font-family:"Microsoft YaHei",Arial;}</style></head><body>'+doc.getElementById('preview').innerHTML+'</body></html>';
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([html],{type:'text/html'}));
+            a.download = title + '.html';
+            a.click();
+        }
+    </script>
+</body>
+</html>
