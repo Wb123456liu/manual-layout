@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u4e3b" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="0" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>Service can provide more information on the terms of the warranty. However, the following cases are not covered by the warranty.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="11.338582677165356" RightIndent="5.669291338582678" FirstLineIndent="-11.338582677165356" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>Defects or damage caused by installation work which was not carried out as specified in the DC Wallbox installation instructions.</Content>
+				<Br />
+				<Content>Defects or damage caused by the product not being used as specified in the DC Wallbox operating manual.</Content>
+				<Br />
+				<Content>Costs and damage caused by repair work not carried out by a specialist electrician authorized by outlet or authorized service workshop.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
