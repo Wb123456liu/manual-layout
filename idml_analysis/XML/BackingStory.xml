@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:BackingStory xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<XmlStory Self="ub3" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Content>﻿﻿﻿</Content>
+				<XMLElement Self="di3" MarkupTag="XMLTag/Root">
+					<XMLElement Self="di3i4" MarkupTag="XMLTag/Root">
+						<XMLAttribute Self="di3i4XMLAttributenhref" Name="href" Value="file:///E:/work/%e5%b7%a5%e4%bd%9c%e6%a0%87%e5%87%86/%e7%94%a8%e6%88%b7%e6%89%8b%e5%86%8c%26%e5%ae%89%e8%a3%85%e6%89%8b%e5%86%8c%e7%a4%ba%e4%be%8b/%e2%80%9c22%e5%8d%83%e7%93%a6%e7%94%a8%e6%88%b7%e6%89%8b%e5%86%8c%e2%80%9d%e6%96%87%e4%bb%b6%e5%a4%b9/Links/%e5%9b%bd%e9%99%85%e7%89%88%e4%ba%a4%e6%b5%81%e6%a1%a9-22%e5%8d%83%e7%93%a6.png" />
+					</XMLElement>
+					<XMLElement Self="di3i5" MarkupTag="XMLTag/Root">
+						<XMLAttribute Self="di3i5XMLAttributenhref" Name="href" Value="file:///D:/%e5%b7%a5%e4%bd%9c/2020-05/22kW/%e5%b9%b3%e9%9d%a2%e8%b5%84%e6%96%99/%e6%9c%80%e7%bb%88ID/%e6%96%b0%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9/%e6%9e%aa%e5%ba%a7/22_____/%e5%9b%bd%e9%99%85%e7%89%88%e4%ba%a4%e6%b5%81%e6%a1%a9-22%e5%8d%83%e7%93%a6.png" />
+					</XMLElement>
+					<XMLElement Self="di3i6" MarkupTag="XMLTag/Root">
+						<XMLAttribute Self="di3i6XMLAttributenhref" Name="href" Value="file:///D:/%e5%b7%a5%e4%bd%9c/2020-05/22kW/%e5%b9%b3%e9%9d%a2%e8%b5%84%e6%96%99/%e6%9c%80%e7%bb%88ID/%e6%96%b0%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9/%e6%9e%aa%e5%ba%a7/22_____/%e5%9b%bd%e9%99%85%e7%89%88%e4%ba%a4%e6%b5%81%e6%a1%a9-22%e5%8d%83%e7%93%a6.png" />
+					</XMLElement>
+					<XMLElement Self="di3i7" MarkupTag="XMLTag/Root">
+						<XMLAttribute Self="di3i7XMLAttributenhref" Name="href" Value="file:///D:/%e5%b7%a5%e4%bd%9c/2020-05/22kW/%e5%b9%b3%e9%9d%a2%e8%b5%84%e6%96%99/%e6%9c%80%e7%bb%88ID/%e6%96%b0%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9/%e6%9e%aa%e5%ba%a7/22_____/%e5%9b%bd%e9%99%85%e7%89%88%e4%ba%a4%e6%b5%81%e6%a1%a9-22%e5%8d%83%e7%93%a6.png" />
+					</XMLElement>
+					<XMLElement Self="di3i8" MarkupTag="XMLTag/Root">
+						<XMLAttribute Self="di3i8XMLAttributenhref" Name="href" Value="file:///D:/%e5%b7%a5%e4%bd%9c/2020-05/22kW/%e5%b9%b3%e9%9d%a2%e8%b5%84%e6%96%99/%e6%9c%80%e7%bb%88ID/%e6%96%b0%e5%bb%ba%e6%96%87%e4%bb%b6%e5%a4%b9/%e6%9e%aa%e5%ba%a7/22_____/%e5%9b%bd%e9%99%85%e7%89%88%e4%ba%a4%e6%b5%81%e6%a1%a9-22%e5%8d%83%e7%93%a6.png" />
+					</XMLElement>
+				</XMLElement>
+				<Content>﻿﻿﻿﻿</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</XmlStory>
+</idPkg:BackingStory>
