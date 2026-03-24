@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u12c11" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="25.511811023622048" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" Justification="LeftAlign" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8" KerningMethod="$ID/None" KerningValue="0">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Content>To view the region, the power grid type setting must be completed first.</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8" KerningMethod="$ID/Metrics">
+				<Properties>
+					<Leading type="unit">12</Leading>
+				</Properties>
+				<Br />
+				<Content>The current firmware version is viewable from the main interface of the APP.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
