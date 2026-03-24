@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u8760" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="0" RightIndent="5.669291338582678" GridGyoudori="1">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="7">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content>①</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content> <?ACE 7?></Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>Peel off the insulation sheath of the entire wire harness by 45mm. </Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="7">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content>②</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>Peel off the insulation sheath of each wire by 13mm. </Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="7">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content>③</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>Insert the tube type terminal onto the wire.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="7">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content>④</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>Use tube terminal crimping pliers for wiring.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="7">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content>⑤</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>Insert the AC Connector.</Content>
+				<Br />
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="7">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content>⑥</Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+					<AppliedFont type="string">HarmonyOS Sans SC</AppliedFont>
+				</Properties>
+				<Content> </Content>
+			</CharacterStyleRange>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">10</Leading>
+				</Properties>
+				<Content>Insert the AC connector into the DC wallbox CN1 interface.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
