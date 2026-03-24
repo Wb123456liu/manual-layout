@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u5c90" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="2.834645669291339" GridGyoudori="1">
+			<Properties>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>For the personal safety of users and to prevent leakage current, the DC wallbox must configure the residual current device and miniature circuit breaker. </Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>The residual current device must meet the following conditions:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>Every DC wallbox must be connected to its own residual-current-operated circuit breaker (RCCB) externally. No other circuits may be connected to this RCCB.</Content>
+				<Br />
+				<Content>The RCCB must at least be of  type A (30 mA trip current).</Content>
+				<Br />
+				<Content>Additional measurements are implemented in the DC wallbox as protection against direct current faults (&lt;6mA DC).</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Properties>
+					<Leading type="unit">15</Leading>
+				</Properties>
+				<Content>The miniature circuit breaker must meet the following conditions:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>A circuit breaker of  type C (20 A min., 400 V rated.) must be used.</Content>
+				<Br />
+				<Content>According to the BS 7671 standard in the UK, PEN conductor is not allowed to directly enter the DC wallbox. Therefore, the PEN conductor needs to be divided into PE and N conductors to be connected to walbox. The standard requires that in TN-C systems, if the PEN line breaks, corresponding protective measures should be taken. For this situation, a circuit breaker with PEN fault protection function should be selected.</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="19.84251968503937" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9632" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Regular</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>Power cable must meet the following conditions:</Content>
+				<Br />
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/项目符号 正文" LeftIndent="28.34645669291339" RightIndent="5.669291338582678" FirstLineIndent="-8.503937007874017" GridGyoudori="1" BulletsAndNumberingListType="BulletList">
+			<Properties>
+				<BulletChar BulletCharacterType="UnicodeWithFont" BulletCharacterValue="9679" />
+				<BulletsFont type="string">Arial</BulletsFont>
+				<BulletsFontStyle type="string">Narrow</BulletsFontStyle>
+				<SameParaStyleSpacing type="unit">0</SameParaStyleSpacing>
+			</Properties>
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/正文" PointSize="8">
+				<Content>When selecting the supply cable, take into account the possible reduction factors and the increased ambient temperatures in the internal connection area of the DC wallbox, see the temperature rating of the supply terminals. In certain circumstances, this may require an increase in the cable cross-section and an adjustment in the temperature resistance of the supply cable.</Content>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
