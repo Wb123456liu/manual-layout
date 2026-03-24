@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<idPkg:Story xmlns:idPkg="http://ns.adobe.com/AdobeInDesign/idml/1.0/packaging" DOMVersion="20.4">
+	<Story Self="u2e17" AppliedTOCStyle="n" UserText="true" IsEndnoteStory="false" TrackChanges="false" StoryTitle="$ID/" AppliedNamedGrid="n">
+		<StoryPreference OpticalMarginAlignment="false" OpticalMarginSize="12" FrameType="TextFrameType" StoryOrientation="Horizontal" StoryDirection="LeftToRightDirection" />
+		<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+		<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle">
+			<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]">
+				<Table Self="u2e17i2e2c" HeaderRowCount="1" FooterRowCount="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" BodyRowCount="4" ColumnCount="2" AppliedTableStyle="TableStyle/$ID/[Basic Table]" TableDirection="LeftToRightDirection">
+					<Row Self="u2e17i2e2cRow0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="14.173228346456694" MinimumHeight="14.173228346456694" />
+					<Row Self="u2e17i2e2cRow1" Name="1" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="42.73129921305095" MinimumHeight="42.73129921305095" AutoGrow="false" />
+					<Row Self="u2e17i2e2cRow2" Name="2" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="44.220472440944825" MinimumHeight="44.220472440944825" AutoGrow="false" />
+					<Row Self="u2e17i2e2cRow3" Name="3" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="43.6535433070867" MinimumHeight="43.6535433070867" AutoGrow="false" />
+					<Row Self="u2e17i2e2cRow4" Name="4" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleRowHeight="51.023622047244096" MinimumHeight="51.023622047244096" AutoGrow="false" />
+					<Column Self="u2e17i2e2cColumn0" Name="0" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="56.94291338582678" />
+					<Column Self="u2e17i2e2cColumn1" Name="1" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" SingleColumnWidth="305.6417322833464" />
+					<Cell Self="u2e17i2e2ci0" Name="0:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" FillTint="-1" LeftEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="20" RightEdgeStrokePriority="20" TopEdgeStrokePriority="20" BottomEdgeStrokePriority="20">
+						<Properties>
+							<AllCellGradientAttrList type="list">
+								<ListItem type="double">1</ListItem>
+								<ListItem type="double">0</ListItem>
+								<ListItem type="list">
+									<ListItem type="unit">0</ListItem>
+									<ListItem type="unit">1</ListItem>
+								</ListItem>
+							</AllCellGradientAttrList>
+						</Properties>
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="8">
+								<Content>Symbol</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u2e17i2e2ci1" Name="1:0" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Color/R=220 G=79 B=3" FillTint="-1" RightEdgeStrokeWeight="0" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="20" RightEdgeStrokePriority="20" TopEdgeStrokePriority="20" BottomEdgeStrokePriority="20">
+						<Properties>
+							<AllCellGradientAttrList type="list">
+								<ListItem type="double">1</ListItem>
+								<ListItem type="double">0</ListItem>
+								<ListItem type="list">
+									<ListItem type="unit">0</ListItem>
+									<ListItem type="unit">1</ListItem>
+								</ListItem>
+							</AllCellGradientAttrList>
+						</Properties>
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" Justification="CenterJustified">
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" FillColor="Color/Paper" PointSize="8">
+								<Content>Meaning</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u2e17i2e2ci2" Name="0:1" RowSpan="1" ColumnSpan="1" CellType="GraphicTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" TopEdgeStrokeTint="100" LeftEdgeStrokePriority="13" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<Rectangle Self="u2e46" ContentType="GraphicType" StoryTitle="$ID/" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" OverriddenPageItemProps="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientStrokeStart="0 0" GradientStrokeLength="0" GradientStrokeAngle="0" LocalDisplaySetting="Default" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" GradientStrokeHiliteLength="0" GradientStrokeHiliteAngle="0" AppliedObjectStyle="ObjectStyle/$ID/[None]" Visible="true" Name="$ID/" ItemTransform="1 0 0 1 0 0">
+							<Properties>
+								<PathGeometry>
+									<GeometryPathType PathOpen="false">
+										<PathPointArray>
+											<PathPointType Anchor="0 0" LeftDirection="0 0" RightDirection="0 0" />
+											<PathPointType Anchor="0 42.25196850438954" LeftDirection="0 42.25196850438954" RightDirection="0 42.25196850438954" />
+											<PathPointType Anchor="56.69291338582678 42.25196850438954" LeftDirection="56.69291338582678 42.25196850438954" RightDirection="56.69291338582678 42.25196850438954" />
+											<PathPointType Anchor="56.69291338582678 0" LeftDirection="56.69291338582678 0" RightDirection="56.69291338582678 0" />
+										</PathPointArray>
+									</GeometryPathType>
+								</PathGeometry>
+							</Properties>
+							<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+								<Properties>
+									<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+								</Properties>
+								<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+							</TextWrapPreference>
+							<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+							<FrameFittingOption LeftCrop="-12.806428649296361" TopCrop="-4.395309272948088" RightCrop="-12.161008644833245" BottomCrop="-10.232084136878925" FittingOnEmptyFrame="FillProportionally" />
+							<ObjectExportOption EpubType="$ID/" SizeType="DefaultSize" CustomSize="$ID/" PreserveAppearanceFromLayout="PreserveAppearanceDefault" AltTextSourceType="SourceXMLStructure" ActualTextSourceType="SourceXMLStructure" CustomAltText="$ID/" CustomActualText="$ID/" ApplyTagType="TagFromStructure" ImageConversionType="JPEG" ImageExportResolution="Ppi300" GIFOptionsPalette="AdaptivePalette" GIFOptionsInterlaced="true" JPEGOptionsQuality="High" JPEGOptionsFormat="BaselineEncoding" ImageAlignment="AlignLeft" ImageSpaceBefore="0" ImageSpaceAfter="0" UseImagePageBreak="false" ImagePageBreak="PageBreakBefore" CustomImageAlignment="false" SpaceUnit="CssPixel" CustomLayout="false" CustomLayoutType="AlignmentAndSpacing">
+								<Properties>
+									<AltMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+									<ActualMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+								</Properties>
+							</ObjectExportOption>
+							<Image Self="u7991" Space="$ID/#Links_RGB" ActualPpi="220 220" EffectivePpi="323 342" ImageRenderingIntent="UseColorSettings" OverriddenPageItemProps="" LocalDisplaySetting="Default" ImageTypeName="$ID/Portable Network Graphics (PNG)" AppliedObjectStyle="ObjectStyle/$ID/[None]" ItemTransform="0.6812022321468683 0 0 0.6432572802235724 8.723767781730285 2.827314688658035" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" Visible="true" Name="$ID/">
+								<Properties>
+									<Profile type="string">$ID/None</Profile>
+									<GraphicBounds Left="0" Top="0" Right="58.257353686302324" Bottom="51.05700660147844" />
+								</Properties>
+								<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+									<Properties>
+										<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+									</Properties>
+									<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+								</TextWrapPreference>
+								<Link Self="u2e42" AssetURL="$ID/" AssetID="$ID/" RenditionData="Actual" LinkResourceURI="file:D:/%E6%8E%92%E7%89%88%E6%89%8B%E5%86%8C/%E5%82%A8%E8%83%BD%E4%BA%A7%E5%93%81/%E5%8F%8C%E5%90%91%E7%9B%B4%E6%B5%81%E5%85%85%E7%94%B5%E6%9F%9C11kW/%E2%80%9CIEC11kW%20bi-directional%20DC%20wallbox%20use%20manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/%E2%80%9CIEC11kW%20Bi-directional%20DC%20Wallbox%20Use%20Manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/Links/Warning-00.png" LinkResourceFormat="$ID/Portable Network Graphics (PNG)" StoredState="Normal" LinkClassID="35906" LinkClientID="257" LinkResourceModified="false" LinkObjectModified="false" ShowInUI="true" CanEmbed="true" CanUnembed="true" CanPackage="true" ImportPolicy="NoAutoImport" ExportPolicy="NoAutoExport" LinkImportStamp="file 134091956742597606 36918" LinkImportModificationTime="2025-12-03T08:34:34" LinkImportTime="2026-03-23T13:29:20" LinkResourceSize="0~9036" />
+								<ClippingPathSettings ClippingType="None" InvertPath="false" IncludeInsideEdges="false" RestrictToFrame="false" UseHighResolutionImage="true" Threshold="25" Tolerance="2" InsetFrame="0" AppliedPathName="$ID/" Index="-1" />
+								<ImageIOPreference ApplyPhotoshopClippingPath="true" AllowAutoEmbedding="true" AlphaChannelName="$ID/" />
+							</Image>
+						</Rectangle>
+					</Cell>
+					<Cell Self="u2e17i2e2ci3" Name="1:1" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" TopEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" TopEdgeStrokeTint="100" LeftEdgeStrokePriority="21" RightEdgeStrokePriority="21" TopEdgeStrokePriority="21" BottomEdgeStrokePriority="13">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" RightIndent="5.669291338582678" Justification="LeftAlign">
+							<Properties>
+								<KinsokuSet type="enumeration">TraditionalChineseKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>The &quot;Warning&quot; sign indicates danger. Incorrect operation steps, experiment or execution will cause personal injury or death. Only when the referred conditions are fully understood and met can subsequent operations be carried out.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u2e17i2e2ci4" Name="0:2" RowSpan="1" ColumnSpan="1" CellType="GraphicTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" LeftEdgeStrokePriority="13" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<Rectangle Self="u2e63" ContentType="GraphicType" StoryTitle="$ID/" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" OverriddenPageItemProps="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientStrokeStart="0 0" GradientStrokeLength="0" GradientStrokeAngle="0" LocalDisplaySetting="Default" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" GradientStrokeHiliteLength="0" GradientStrokeHiliteAngle="0" AppliedObjectStyle="ObjectStyle/$ID/[None]" Visible="true" Name="$ID/" ItemTransform="1 0 0 1 0 0">
+							<Properties>
+								<PathGeometry>
+									<GeometryPathType PathOpen="false">
+										<PathPointArray>
+											<PathPointType Anchor="0 0" LeftDirection="0 0" RightDirection="0 0" />
+											<PathPointType Anchor="0 43.970472440944825" LeftDirection="0 43.970472440944825" RightDirection="0 43.970472440944825" />
+											<PathPointType Anchor="56.69291338582678 43.970472440944825" LeftDirection="56.69291338582678 43.970472440944825" RightDirection="56.69291338582678 43.970472440944825" />
+											<PathPointType Anchor="56.69291338582678 0" LeftDirection="56.69291338582678 0" RightDirection="56.69291338582678 0" />
+										</PathPointArray>
+									</GeometryPathType>
+								</PathGeometry>
+							</Properties>
+							<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+								<Properties>
+									<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+								</Properties>
+								<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+							</TextWrapPreference>
+							<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+							<FrameFittingOption LeftCrop="-8.068843160256522" TopCrop="-4.60822971041074" RightCrop="-11.350274735177592" BottomCrop="-8.133664801651193" FittingOnEmptyFrame="FillProportionally" />
+							<ObjectExportOption EpubType="$ID/" SizeType="DefaultSize" CustomSize="$ID/" PreserveAppearanceFromLayout="PreserveAppearanceDefault" AltTextSourceType="SourceXMLStructure" ActualTextSourceType="SourceXMLStructure" CustomAltText="$ID/" CustomActualText="$ID/" ApplyTagType="TagFromStructure" ImageConversionType="JPEG" ImageExportResolution="Ppi300" GIFOptionsPalette="AdaptivePalette" GIFOptionsInterlaced="true" JPEGOptionsQuality="High" JPEGOptionsFormat="BaselineEncoding" ImageAlignment="AlignLeft" ImageSpaceBefore="0" ImageSpaceAfter="0" UseImagePageBreak="false" ImagePageBreak="PageBreakBefore" CustomImageAlignment="false" SpaceUnit="CssPixel" CustomLayout="false" CustomLayoutType="AlignmentAndSpacing">
+								<Properties>
+									<AltMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+									<ActualMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+								</Properties>
+							</ObjectExportOption>
+							<Image Self="u7997" Space="$ID/#Links_RGB" ActualPpi="220 220" EffectivePpi="301 319" ImageRenderingIntent="UseColorSettings" OverriddenPageItemProps="" LocalDisplaySetting="Default" ImageTypeName="$ID/Portable Network Graphics (PNG)" AppliedObjectStyle="ObjectStyle/$ID/[None]" ItemTransform="0.7298595344430734 0 0 0.6892042288109683 5.8891221124390025 3.1760114037474256" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" Visible="true" Name="$ID/">
+								<Properties>
+									<Profile type="string">$ID/None</Profile>
+									<GraphicBounds Left="0" Top="0" Right="58.257353686302324" Bottom="51.05700660147844" />
+								</Properties>
+								<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+									<Properties>
+										<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+									</Properties>
+									<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+								</TextWrapPreference>
+								<Link Self="u2e60" AssetURL="$ID/" AssetID="$ID/" RenditionData="Actual" LinkResourceURI="file:D:/%E6%8E%92%E7%89%88%E6%89%8B%E5%86%8C/%E5%82%A8%E8%83%BD%E4%BA%A7%E5%93%81/%E5%8F%8C%E5%90%91%E7%9B%B4%E6%B5%81%E5%85%85%E7%94%B5%E6%9F%9C11kW/%E2%80%9CIEC11kW%20bi-directional%20DC%20wallbox%20use%20manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/%E2%80%9CIEC11kW%20Bi-directional%20DC%20Wallbox%20Use%20Manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/Links/Caution-00.png" LinkResourceFormat="$ID/Portable Network Graphics (PNG)" StoredState="Normal" LinkClassID="35906" LinkClientID="257" LinkResourceModified="false" LinkObjectModified="false" ShowInUI="true" CanEmbed="true" CanUnembed="true" CanPackage="true" ImportPolicy="NoAutoImport" ExportPolicy="NoAutoExport" LinkImportStamp="file 134091956730399598 37373" LinkImportModificationTime="2025-12-03T08:34:33" LinkImportTime="2026-03-23T13:29:20" LinkResourceSize="0~91fd" />
+								<ClippingPathSettings ClippingType="None" InvertPath="false" IncludeInsideEdges="false" RestrictToFrame="false" UseHighResolutionImage="true" Threshold="25" Tolerance="2" InsetFrame="0" AppliedPathName="$ID/" Index="-1" />
+								<ImageIOPreference ApplyPhotoshopClippingPath="true" AllowAutoEmbedding="true" AlphaChannelName="$ID/" />
+							</Image>
+						</Rectangle>
+					</Cell>
+					<Cell Self="u2e17i2e2ci5" Name="1:2" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="21" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" RightIndent="5.669291338582678">
+							<Properties>
+								<KinsokuSet type="enumeration">TraditionalChineseKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>The &quot;Caution&quot; sign indicates danger. Incorrect operation steps, experiment or executive can lead to product damage or damage, etc. Only when the referred conditions are fully understood and met can subsequent operations be carried out.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u2e17i2e2ci6" Name="0:3" RowSpan="1" ColumnSpan="1" CellType="GraphicTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" LeftEdgeStrokePriority="13" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<Rectangle Self="u2e6e" ContentType="GraphicType" StoryTitle="$ID/" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" OverriddenPageItemProps="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientStrokeStart="0 0" GradientStrokeLength="0" GradientStrokeAngle="0" LocalDisplaySetting="Default" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" GradientStrokeHiliteLength="0" GradientStrokeHiliteAngle="0" AppliedObjectStyle="ObjectStyle/$ID/[None]" Visible="true" Name="$ID/" ItemTransform="1 0 0 1 0 0">
+							<Properties>
+								<PathGeometry>
+									<GeometryPathType PathOpen="false">
+										<PathPointArray>
+											<PathPointType Anchor="0 0" LeftDirection="0 0" RightDirection="0 0" />
+											<PathPointType Anchor="0 43.4035433070867" LeftDirection="0 43.4035433070867" RightDirection="0 43.4035433070867" />
+											<PathPointType Anchor="56.69291338582678 43.4035433070867" LeftDirection="56.69291338582678 43.4035433070867" RightDirection="56.69291338582678 43.4035433070867" />
+											<PathPointType Anchor="56.69291338582678 0" LeftDirection="56.69291338582678 0" RightDirection="56.69291338582678 0" />
+										</PathPointArray>
+									</GeometryPathType>
+								</PathGeometry>
+							</Properties>
+							<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+								<Properties>
+									<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+								</Properties>
+								<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+							</TextWrapPreference>
+							<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+							<FrameFittingOption LeftCrop="-22.766971474957302" TopCrop="-12.05104354473061" RightCrop="-34.838016749960005" BottomCrop="-11.79602145914383" FittingOnEmptyFrame="FillProportionally" />
+							<ObjectExportOption EpubType="$ID/" SizeType="DefaultSize" CustomSize="$ID/" PreserveAppearanceFromLayout="PreserveAppearanceDefault" AltTextSourceType="SourceXMLStructure" ActualTextSourceType="SourceXMLStructure" CustomAltText="$ID/" CustomActualText="$ID/" ApplyTagType="TagFromStructure" ImageConversionType="JPEG" ImageExportResolution="Ppi300" GIFOptionsPalette="AdaptivePalette" GIFOptionsInterlaced="true" JPEGOptionsQuality="High" JPEGOptionsFormat="BaselineEncoding" ImageAlignment="AlignLeft" ImageSpaceBefore="0" ImageSpaceAfter="0" UseImagePageBreak="false" ImagePageBreak="PageBreakBefore" CustomImageAlignment="false" SpaceUnit="CssPixel" CustomLayout="false" CustomLayoutType="AlignmentAndSpacing">
+								<Properties>
+									<AltMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+									<ActualMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+								</Properties>
+							</ObjectExportOption>
+							<Image Self="u799f" Space="$ID/#Links_RGB" ActualPpi="120 120" EffectivePpi="305 305" ImageRenderingIntent="UseColorSettings" OverriddenPageItemProps="" LocalDisplaySetting="Default" ImageTypeName="$ID/Portable Network Graphics (PNG)" AppliedObjectStyle="ObjectStyle/$ID/[None]" ItemTransform="0.3936666954220747 0 0 0.39366669542207466 8.96259842531508 4.7440944886416245" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" Visible="true" Name="$ID/">
+								<Properties>
+									<Profile type="string">$ID/None</Profile>
+									<GraphicBounds Left="0" Top="0" Right="86.40748233737587" Bottom="86.40748233737587" />
+								</Properties>
+								<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+									<Properties>
+										<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+									</Properties>
+									<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+								</TextWrapPreference>
+								<Link Self="u2e69" AssetURL="$ID/" AssetID="$ID/" RenditionData="Actual" LinkResourceURI="file:D:/%E6%8E%92%E7%89%88%E6%89%8B%E5%86%8C/%E5%82%A8%E8%83%BD%E4%BA%A7%E5%93%81/%E5%8F%8C%E5%90%91%E7%9B%B4%E6%B5%81%E5%85%85%E7%94%B5%E6%9F%9C11kW/%E2%80%9CIEC11kW%20bi-directional%20DC%20wallbox%20use%20manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/%E2%80%9CIEC11kW%20Bi-directional%20DC%20Wallbox%20Use%20Manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/Links/Prompt-00.png" LinkResourceFormat="$ID/Portable Network Graphics (PNG)" StoredState="Normal" LinkClassID="35906" LinkClientID="257" LinkResourceModified="false" LinkObjectModified="false" ShowInUI="true" CanEmbed="true" CanUnembed="true" CanPackage="true" ImportPolicy="NoAutoImport" ExportPolicy="NoAutoExport" LinkImportStamp="file 134091956740311441 9900" LinkImportModificationTime="2025-12-03T08:34:34" LinkImportTime="2026-03-23T13:29:20" LinkResourceSize="0~26ac" />
+								<ClippingPathSettings ClippingType="None" InvertPath="false" IncludeInsideEdges="false" RestrictToFrame="false" UseHighResolutionImage="true" Threshold="25" Tolerance="2" InsetFrame="0" AppliedPathName="$ID/" Index="-1" />
+								<ImageIOPreference ApplyPhotoshopClippingPath="true" AllowAutoEmbedding="true" AlphaChannelName="$ID/" />
+							</Image>
+						</Rectangle>
+					</Cell>
+					<Cell Self="u2e17i2e2ci7" Name="1:3" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" LeftEdgeStrokePriority="21" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" RightIndent="5.669291338582678">
+							<Properties>
+								<KinsokuSet type="enumeration">TraditionalChineseKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>The &quot;Tip&quot; sign indicates usage tips or useful information. Use the tips and useful information, which does not contain warning functions of dangerous or harmful information.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+					<Cell Self="u2e17i2e2ci8" Name="0:4" RowSpan="1" ColumnSpan="1" CellType="GraphicTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" LeftEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="13" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="13">
+						<Rectangle Self="u2e7c" ContentType="GraphicType" StoryTitle="$ID/" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" OverriddenPageItemProps="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientStrokeStart="0 0" GradientStrokeLength="0" GradientStrokeAngle="0" LocalDisplaySetting="Default" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" GradientStrokeHiliteLength="0" GradientStrokeHiliteAngle="0" AppliedObjectStyle="ObjectStyle/$ID/[None]" Visible="true" Name="$ID/" ItemTransform="1 0 0 1 0 0">
+							<Properties>
+								<PathGeometry>
+									<GeometryPathType PathOpen="false">
+										<PathPointArray>
+											<PathPointType Anchor="0 0" LeftDirection="0 0" RightDirection="0 0" />
+											<PathPointType Anchor="0 50.773622047244096" LeftDirection="0 50.773622047244096" RightDirection="0 50.773622047244096" />
+											<PathPointType Anchor="56.69291338582678 50.773622047244096" LeftDirection="56.69291338582678 50.773622047244096" RightDirection="56.69291338582678 50.773622047244096" />
+											<PathPointType Anchor="56.69291338582678 0" LeftDirection="56.69291338582678 0" RightDirection="56.69291338582678 0" />
+										</PathPointArray>
+									</GeometryPathType>
+								</PathGeometry>
+							</Properties>
+							<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+								<Properties>
+									<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+								</Properties>
+								<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+							</TextWrapPreference>
+							<InCopyExportOption IncludeGraphicProxies="true" IncludeAllResources="false" />
+							<FrameFittingOption LeftCrop="-11.493862576718241" TopCrop="-5.4563299338320475" RightCrop="-12.826190863630956" BottomCrop="-5.390772068484949" FittingOnEmptyFrame="FillProportionally" />
+							<ObjectExportOption EpubType="$ID/" SizeType="DefaultSize" CustomSize="$ID/" PreserveAppearanceFromLayout="PreserveAppearanceDefault" AltTextSourceType="SourceXMLStructure" ActualTextSourceType="SourceXMLStructure" CustomAltText="$ID/" CustomActualText="$ID/" ApplyTagType="TagFromStructure" ImageConversionType="JPEG" ImageExportResolution="Ppi300" GIFOptionsPalette="AdaptivePalette" GIFOptionsInterlaced="true" JPEGOptionsQuality="High" JPEGOptionsFormat="BaselineEncoding" ImageAlignment="AlignLeft" ImageSpaceBefore="0" ImageSpaceAfter="0" UseImagePageBreak="false" ImagePageBreak="PageBreakBefore" CustomImageAlignment="false" SpaceUnit="CssPixel" CustomLayout="false" CustomLayoutType="AlignmentAndSpacing">
+								<Properties>
+									<AltMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+									<ActualMetadataProperty NamespacePrefix="$ID/" PropertyPath="$ID/" />
+								</Properties>
+							</ObjectExportOption>
+							<Image Self="u79a5" Space="$ID/#Links_RGB" ActualPpi="220 220" EffectivePpi="270 332" ImageRenderingIntent="UseColorSettings" OverriddenPageItemProps="" LocalDisplaySetting="Default" ImageTypeName="$ID/Portable Network Graphics (PNG)" AppliedObjectStyle="ObjectStyle/$ID/[None]" ItemTransform="0.8158912863291169 0 0 0.6625634404719039 9.377742322608743 3.6151647333095966" ParentInterfaceChangeCount="" TargetInterfaceChangeCount="" LastUpdatedInterfaceChangeCount="" HorizontalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" VerticalLayoutConstraints="FlexibleDimension FixedDimension FlexibleDimension" GradientFillStart="0 0" GradientFillLength="0" GradientFillAngle="0" GradientFillHiliteLength="0" GradientFillHiliteAngle="0" Visible="true" Name="$ID/">
+								<Properties>
+									<Profile type="string">$ID/None</Profile>
+									<GraphicBounds Left="0" Top="0" Right="45.16581353207708" Bottom="65.78498927498184" />
+								</Properties>
+								<TextWrapPreference Inverse="false" ApplyToMasterPageOnly="false" TextWrapSide="BothSides" TextWrapMode="None">
+									<Properties>
+										<TextWrapOffset Top="0" Left="0" Bottom="0" Right="0" />
+									</Properties>
+									<ContourOption ContourType="SameAsClipping" IncludeInsideEdges="false" ContourPathName="$ID/" />
+								</TextWrapPreference>
+								<Link Self="u2e79" AssetURL="$ID/" AssetID="$ID/" RenditionData="Actual" LinkResourceURI="file:D:/%E6%8E%92%E7%89%88%E6%89%8B%E5%86%8C/%E5%82%A8%E8%83%BD%E4%BA%A7%E5%93%81/%E5%8F%8C%E5%90%91%E7%9B%B4%E6%B5%81%E5%85%85%E7%94%B5%E6%9F%9C11kW/%E2%80%9CIEC11kW%20bi-directional%20DC%20wallbox%20use%20manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/%E2%80%9CIEC11kW%20Bi-directional%20DC%20Wallbox%20Use%20Manual%E2%80%9D%E6%96%87%E4%BB%B6%E5%A4%B9/Links/Waste%20Disposal-00.png" LinkResourceFormat="$ID/Portable Network Graphics (PNG)" StoredState="Normal" LinkClassID="35906" LinkClientID="257" LinkResourceModified="false" LinkObjectModified="false" ShowInUI="true" CanEmbed="true" CanUnembed="true" CanPackage="true" ImportPolicy="NoAutoImport" ExportPolicy="NoAutoExport" LinkImportStamp="file 134091956743683619 20858" LinkImportModificationTime="2025-12-03T08:34:34" LinkImportTime="2026-03-23T13:29:20" LinkResourceSize="0~517a" />
+								<ClippingPathSettings ClippingType="None" InvertPath="false" IncludeInsideEdges="false" RestrictToFrame="false" UseHighResolutionImage="true" Threshold="25" Tolerance="2" InsetFrame="0" AppliedPathName="$ID/" Index="-1" />
+								<ImageIOPreference ApplyPhotoshopClippingPath="true" AllowAutoEmbedding="true" AlphaChannelName="$ID/" />
+							</Image>
+						</Rectangle>
+					</Cell>
+					<Cell Self="u2e17i2e2ci9" Name="1:4" RowSpan="1" ColumnSpan="1" CellType="TextTypeCell" TextTopInset="1.4173228346456694" TextLeftInset="1.4173228346456694" TextBottomInset="1.4173228346456694" TextRightInset="1.4173228346456694" ClipContentToTextCell="false" AppliedCellStyle="CellStyle/$ID/[None]" AppliedCellStylePriority="0" FillColor="Swatch/None" LeftEdgeStrokeColor="Color/R=220 G=79 B=3" TopEdgeStrokeColor="Color/R=220 G=79 B=3" RightEdgeStrokeColor="Color/R=220 G=79 B=3" BottomEdgeStrokeColor="Color/R=220 G=79 B=3" LeftEdgeStrokeType="StrokeStyle/$ID/Solid" RightEdgeStrokeType="StrokeStyle/$ID/Solid" BottomEdgeStrokeType="StrokeStyle/$ID/Solid" VerticalJustification="CenterAlign" RightEdgeStrokeTint="100" BottomEdgeStrokeTint="100" LeftEdgeStrokePriority="21" RightEdgeStrokePriority="21" TopEdgeStrokePriority="13" BottomEdgeStrokePriority="21">
+						<ParagraphStyleRange AppliedParagraphStyle="ParagraphStyle/$ID/NormalParagraphStyle" RightIndent="5.669291338582678">
+							<Properties>
+								<KinsokuSet type="enumeration">TraditionalChineseKinsoku</KinsokuSet>
+							</Properties>
+							<CharacterStyleRange AppliedCharacterStyle="CharacterStyle/$ID/[No character style]" PointSize="7">
+								<Properties>
+									<Leading type="unit">10</Leading>
+								</Properties>
+								<Content>The &quot;Waste Disposal&quot; sign indicates that electrical and electronic equipment and their accessories should be disposed of separately from ordinary domestic waste. By reusing old equipment, materials or other forms, you can make a significant contribution to environmental protection.</Content>
+							</CharacterStyleRange>
+						</ParagraphStyleRange>
+					</Cell>
+				</Table>
+			</CharacterStyleRange>
+		</ParagraphStyleRange>
+	</Story>
+</idPkg:Story>
