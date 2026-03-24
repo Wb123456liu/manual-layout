@@ -1,0 +1,221 @@
+{
+  "review_rules": {
+    "CN_AC_UM": {
+      "name": "中国大陆 - 交流充电 - 用户手册",
+      "region": "CN",
+      "product_type": "AC",
+      "manual_type": "UM",
+      "standards": ["GB/T 16273", "GB 5226", "CCC"],
+      "language": "zh-CN",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["CCC", "CQC"]
+    },
+    "CN_DC_UM": {
+      "name": "中国大陆 - 直流充电 - 用户手册",
+      "region": "CN",
+      "product_type": "DC",
+      "manual_type": "UM",
+      "standards": ["GB/T 16273", "GB/T 18487", "CCC"],
+      "language": "zh-CN",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["CCC", "CQC"]
+    },
+    "CN_HS_UM": {
+      "name": "中国大陆 - 户用储能 - 用户手册",
+      "region": "CN",
+      "product_type": "HS",
+      "manual_type": "UM",
+      "standards": ["GB/T 36276", "GB 5226"],
+      "language": "zh-CN",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["CCC", "CQC"]
+    },
+    "CN_PCS_UM": {
+      "name": "中国大陆 - PCS - 用户手册",
+      "region": "CN",
+      "product_type": "PCS",
+      "manual_type": "UM",
+      "standards": ["GB/T 34120", "GB 5226"],
+      "language": "zh-CN",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["CCC", "CQC"]
+    },
+    "EU_AC_UM": {
+      "name": "欧洲 - 交流充电 - 用户手册",
+      "region": "EU",
+      "product_type": "AC",
+      "manual_type": "UM",
+      "standards": ["ISO 7010", "IEC 61851", "CE"],
+      "language": "multi",
+      "languages": ["en", "de", "fr", "es", "it"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["CE", "TÜV"]
+    },
+    "EU_DC_UM": {
+      "name": "欧洲 - 直流充电 - 用户手册",
+      "region": "EU",
+      "product_type": "DC",
+      "manual_type": "UM",
+      "standards": ["ISO 7010", "IEC 61851", "IEC 62196", "CE"],
+      "language": "multi",
+      "languages": ["en", "de", "fr", "es", "it"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["CE", "TÜV"]
+    },
+    "EU_HS_UM": {
+      "name": "欧洲 - 户用储能 - 用户手册",
+      "region": "EU",
+      "product_type": "HS",
+      "manual_type": "UM",
+      "standards": ["ISO 7010", "IEC 62619", "CE"],
+      "language": "multi",
+      "languages": ["en", "de", "fr", "es", "it"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["CE", "TÜV", "UN38.3"]
+    },
+    "EU_PCS_UM": {
+      "name": "欧洲 - PCS - 用户手册",
+      "region": "EU",
+      "product_type": "PCS",
+      "manual_type": "UM",
+      "standards": ["ISO 7010", "IEC 62109", "CE"],
+      "language": "multi",
+      "languages": ["en", "de", "fr", "es", "it"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["CE", "TÜV"]
+    },
+    "US_AC_UM": {
+      "name": "北美 - 交流充电 - 用户手册",
+      "region": "US",
+      "product_type": "AC",
+      "manual_type": "UM",
+      "standards": ["ANSI Z535", "UL 2594", "CSA"],
+      "language": "en",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["UL", "CSA"],
+      "units": "imperial"
+    },
+    "US_DC_UM": {
+      "name": "北美 - 直流充电 - 用户手册",
+      "region": "US",
+      "product_type": "DC",
+      "manual_type": "UM",
+      "standards": ["ANSI Z535", "UL 2202", "CSA"],
+      "language": "en",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["UL", "CSA"],
+      "units": "imperial"
+    },
+    "US_HS_UM": {
+      "name": "北美 - 户用储能 - 用户手册",
+      "region": "US",
+      "product_type": "HS",
+      "manual_type": "UM",
+      "standards": ["ANSI Z535", "UL 1973", "CSA"],
+      "language": "en",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["UL", "CSA", "UN38.3"],
+      "units": "imperial"
+    },
+    "US_PCS_UM": {
+      "name": "北美 - PCS - 用户手册",
+      "region": "US",
+      "product_type": "PCS",
+      "manual_type": "UM",
+      "standards": ["ANSI Z535", "UL 1741", "CSA"],
+      "language": "en",
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "technical"],
+      "certifications": ["UL", "CSA"],
+      "units": "imperial"
+    },
+    "SEA_AC_UM": {
+      "name": "东南亚 - 交流充电 - 用户手册",
+      "region": "SEA",
+      "product_type": "AC",
+      "manual_type": "UM",
+      "standards": ["IEC 61851"],
+      "language": "multi",
+      "languages": ["en", "th", "vi", "id"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["IEC"]
+    },
+    "SEA_DC_UM": {
+      "name": "东南亚 - 直流充电 - 用户手册",
+      "region": "SEA",
+      "product_type": "DC",
+      "manual_type": "UM",
+      "standards": ["IEC 61851", "IEC 62196"],
+      "language": "multi",
+      "languages": ["en", "th", "vi", "id"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["IEC"]
+    },
+    "SEA_HS_UM": {
+      "name": "东南亚 - 户用储能 - 用户手册",
+      "region": "SEA",
+      "product_type": "HS",
+      "manual_type": "UM",
+      "standards": ["IEC 62619"],
+      "language": "multi",
+      "languages": ["en", "th", "vi", "id"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["IEC", "UN38.3"]
+    },
+    "SEA_PCS_UM": {
+      "name": "东南亚 - PCS - 用户手册",
+      "region": "SEA",
+      "product_type": "PCS",
+      "manual_type": "UM",
+      "standards": ["IEC 62109"],
+      "language": "multi",
+      "languages": ["en", "th", "vi", "id"],
+      "output_formats": ["PDF_Print", "IDML"],
+      "review_focus": ["safety", "localization"],
+      "certifications": ["IEC"]
+    }
+  },
+  "safety_levels": {
+    "DANGER": {
+      "description": "不避免将导致死亡或重伤",
+      "color": "#FF0000",
+      "background": "#FFEEEE",
+      "icon": "danger_symbol"
+    },
+    "WARNING": {
+      "description": "不避免可能导致死亡或重伤",
+      "color": "#FF8C00",
+      "background": "#FFF3E0",
+      "icon": "warning_triangle"
+    },
+    "CAUTION": {
+      "description": "不避免可能导致伤害或设备损坏",
+      "color": "#FFD700",
+      "background": "#FFFDE7",
+      "icon": "caution_triangle"
+    },
+    "NOTICE": {
+      "description": "不遵守可能导致设备损坏",
+      "color": "#1E90FF",
+      "background": "#E3F2FD",
+      "icon": "info_circle"
+    }
+  },
+  "review_timeout_minutes": 30,
+  "auto_retry": true,
+  "max_retries": 2
+}
